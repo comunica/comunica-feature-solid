@@ -9417,7 +9417,7 @@ sparqlalgebrajs@^2.4.0, sparqlalgebrajs@^2.5.5:
     rdf-string "^1.5.0"
     sparqljs "^3.3.0"
 
-sparqlalgebrajs@^3.0.1, sparqlalgebrajs@^3.0.2:
+sparqlalgebrajs@^3.0.0, sparqlalgebrajs@^3.0.1, sparqlalgebrajs@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/sparqlalgebrajs/-/sparqlalgebrajs-3.0.2.tgz#87c4e09169e635cbeb236cae1f0d8ba4480e484e"
   integrity sha512-aPsgHu3oZ4/XCWpLZ8aSWYW1h220FrDtlVO7FEOQLX5/pImOA/7+T7L9UPq7v05cu3slK90qQj8hlMab3dclHw==
