@@ -1,6 +1,6 @@
 {
   "name": "@comunica/actor-init-sparql-solid",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A Comunica engine for query evaluation over Solid data pods",
   "lsd:module": true,
   "main": "index.js",
@@ -38,7 +38,11 @@
   ],
   "dependencies": {
     "@comunica/actor-init-sparql": "^1.21.3",
-    "@comunica/runner-cli": "^1.21.1"
+    "@comunica/actor-http-inrupt-solid-client-authn": "^1.0.0",
+    "@comunica/runner-cli": "^1.21.1",
+    "@comunica/runner": "^1.21.1",
+    "solid-node-interactive-auth": "^1.0.1",
+    "@inrupt/solid-client-authn-node": "fixnodeproactive-refresh"
   },
   "scripts": {
     "lint": "node \"../../node_modules/tslint/bin/tslint\" lib/**/*.ts test/**/*.ts --exclude '**/*.d.ts'",

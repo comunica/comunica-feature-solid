@@ -1,13 +1,13 @@
 {
   "@context": [
     "https://linkedsoftwaredependencies.org/bundles/npm/@comunica/actor-init-sparql/^1.0.0/components/context.jsonld",
+    "https://linkedsoftwaredependencies.org/bundles/npm/@comunica/actor-init-sparql-solid/^1.0.0/components/context.jsonld",
     "https://linkedsoftwaredependencies.org/bundles/npm/@comunica/runner/^1.0.0/components/context.jsonld"
   ],
   "@id": "urn:comunica:my",
   "@type": "Runner",
   "import": [
-    "files-cais:config/sets/http.json",
-    "files-cais:config/sets/http-memento.json",
+    "files-caiss:config/sets/http.json",
     "files-cais:config/sets/join.json",
     "files-cais:config/sets/rdf-dereference.json",
     "files-cais:config/sets/rdf-parsers.json",

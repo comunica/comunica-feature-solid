@@ -49,12 +49,13 @@ _[**Read more** about querying from the command line](https://comunica.dev/docs/
 
 ### Usage within application
 
-**TODO: improve me**
-
 This engine can be used in JavaScript/TypeScript applications as follows:
 
 ```javascript
 const newEngine = require('@comunica/actor-init-sparql-solid').newEngine;
+const { interactiveLogin } = require('solid-node-interactive-auth');
+
+const session = await interactiveLogin({ oidcIssuer: 'https://solidcommunity.net/' });
 const myEngine = newEngine();
 
 const result = await myEngine.query(`
@@ -63,8 +64,8 @@ const result = await myEngine.query(`
       <https://ruben.verborgh.org/profile/#me> <http://xmlns.com/foaf/0.1/knows> ?p.
       ?p <http://xmlns.com/foaf/0.1/name> ?name.
   }`, {
-  sources: ['https://www.rubensworks.net/'],
-  lenient: true,
+  sources: [session.info.webId],
+  '@comunica/actor-http-inrupt-solid-client-authn:session': session,
 });
 
 // Consume results as a stream (best performance)
