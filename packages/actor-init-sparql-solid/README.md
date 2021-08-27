@@ -1,4 +1,4 @@
-# Comunica SPARQL Link Traversal Init Actor
+# Comunica SPARQL Solid Init Actor
 
 [![npm version](https://badge.fury.io/js/%40comunica%2Factor-init-sparql-solid.svg)](https://www.npmjs.com/package/@comunica/actor-init-sparql-solid)
 [![Docker Pulls](https://img.shields.io/docker/pulls/comunica/actor-init-sparql-solid.svg)](https://hub.docker.com/r/comunica/actor-init-sparql-solid/)
