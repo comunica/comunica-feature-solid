@@ -30,6 +30,8 @@
     "config",
     "bin/**/*.d.ts",
     "bin/**/*.js",
+    "lib/**/*.d.ts",
+    "lib/**/*.js",
     "index.js",
     "index.d.ts",
     "index-browser.d.ts",
@@ -37,10 +39,11 @@
     "engine-default.js"
   ],
   "dependencies": {
-    "@comunica/actor-init-sparql": "^1.21.3",
+    "@comunica/actor-init-sparql": "1.21.4-alpha.4.0",
     "@comunica/actor-http-inrupt-solid-client-authn": "^1.0.0",
-    "@comunica/runner-cli": "^1.21.1",
-    "@comunica/runner": "^1.21.1",
+    "@comunica/core": "1.21.4-alpha.4.0",
+    "@comunica/runner-cli": "1.21.4-alpha.4.0",
+    "@comunica/runner": "1.21.4-alpha.4.0",
     "solid-node-interactive-auth": "^1.0.1",
     "@inrupt/solid-client-authn-node": "fixnodeproactive-refresh"
   },
