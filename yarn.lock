@@ -1827,19 +1827,19 @@
   resolved "https://registry.yarnpkg.com/@hutson/parse-repository-url/-/parse-repository-url-3.0.2.tgz#98c23c950a3d9b6c8f0daed06da6c3af06981340"
   integrity sha512-H9XAx3hc0BQHY6l+IFSWHDySypcXsvsuLhgYLUGywmJ5pswRVQJUHpOsobnLYp2ZUaUlKiKDrgWWhosOwAEM8Q==
 
-"@inrupt/jose-legacy-modules@0.0.3-3.14.4":
-  version "0.0.3-3.14.4"
-  resolved "https://registry.yarnpkg.com/@inrupt/jose-legacy-modules/-/jose-legacy-modules-0.0.3-3.14.4.tgz#150a4c81b0adc8eb848c2b7fff948608ffbb6dd5"
-  integrity sha512-4NySRypv8xgFCEySMFS69joM/4cKxi8V089ImH7zAOwcANV5KJ67VHl25RHAdALZH3DfU20UvwtTkUfcIAlAmg==
+"@inrupt/jose-legacy-modules@0.0.3-3.15.4":
+  version "0.0.3-3.15.4"
+  resolved "https://registry.yarnpkg.com/@inrupt/jose-legacy-modules/-/jose-legacy-modules-0.0.3-3.15.4.tgz#80a77054e15e93ab356d5fd96bacb7371ad402a1"
+  integrity sha512-gcmIqLLFyhNZWw9OKK3kNgEbpKU0z6kn6NPWQlJf0Dy5QtuIgwcS7aRU2GJScz+Dx9KGQVvyAapYX3buHyrBXw==
   dependencies:
-    jose "3.14.4"
+    jose "3.15.4"
 
-"@inrupt/solid-client-authn-core@1.11.2-fixnodeproactive-refresh-1157889868-7690-1629706936.0":
-  version "1.11.2-fixnodeproactive-refresh-1157889868-7690-1629706936.0"
-  resolved "https://registry.yarnpkg.com/@inrupt/solid-client-authn-core/-/solid-client-authn-core-1.11.2-fixnodeproactive-refresh-1157889868-7690-1629706936.0.tgz#372f82b62afc90524a43ed0fd19314adcd3b433c"
-  integrity sha512-JV33cWbTWwnM3BQFy28Oq+rf88zOgI7QAvVFXm2dQiFK8EDQqIB9litLp5K4VOb6LZdSk8nrxrDbp3M5olz8hw==
+"@inrupt/solid-client-authn-core@^1.11.2":
+  version "1.11.2"
+  resolved "https://registry.yarnpkg.com/@inrupt/solid-client-authn-core/-/solid-client-authn-core-1.11.2.tgz#47b3648bffc7bf22ffcd4cb8e04f03178d581eb5"
+  integrity sha512-hL+BC81lE4V0EXZE8PJ418y/vFvW+rfcmHgHqi0ZKSSxLNVE08Ok4W2d+g6wcW3wyePZ9FOL2K8BIh7/jCGj8Q==
   dependencies:
-    "@inrupt/jose-legacy-modules" "0.0.3-3.14.4"
+    "@inrupt/jose-legacy-modules" "0.0.3-3.15.4"
     "@inrupt/solid-common-vocab" "^1.0.0"
     "@types/lodash.clonedeep" "^4.5.6"
     "@types/uuid" "^8.3.0"
@@ -1848,13 +1848,13 @@
     lodash.clonedeep "^4.5.0"
     uuid "^8.3.1"
 
-"@inrupt/solid-client-authn-node@fixnodeproactive-refresh":
-  version "1.11.2-fixnodeproactive-refresh-1157889868-7690-1629706936.0"
-  resolved "https://registry.yarnpkg.com/@inrupt/solid-client-authn-node/-/solid-client-authn-node-1.11.2-fixnodeproactive-refresh-1157889868-7690-1629706936.0.tgz#5fbcdee0dac428c2def5aa93ed903ea0cdeede1a"
-  integrity sha512-+UX+4fj93yE++G5BOdbkvSrvcOzFKFBNrdbUSAJubFqSnbR9LzDCdqKWfknIX0Uz9SsuHbklmrfZsfMmTnAtEA==
+"@inrupt/solid-client-authn-node@^1.11.2":
+  version "1.11.2"
+  resolved "https://registry.yarnpkg.com/@inrupt/solid-client-authn-node/-/solid-client-authn-node-1.11.2.tgz#d9f61f78310f496d2b92ae21969662518f047a34"
+  integrity sha512-APgqEoN7Wuh/A/FtvBu4NQsdZmxY34TprGacU79s1bUpPTU7dPaLEWAyeX/zb/qElbZPZkOlGVX4qUcILJDIFw==
   dependencies:
-    "@inrupt/jose-legacy-modules" "0.0.3-3.14.4"
-    "@inrupt/solid-client-authn-core" "1.11.2-fixnodeproactive-refresh-1157889868-7690-1629706936.0"
+    "@inrupt/jose-legacy-modules" "0.0.3-3.15.4"
+    "@inrupt/solid-client-authn-core" "^1.11.2"
     "@types/node" "^15.0.1"
     "@types/uuid" "^8.3.0"
     cross-fetch "^3.0.6"
@@ -6596,10 +6596,10 @@ jju@~1.4.0:
   resolved "https://registry.yarnpkg.com/jju/-/jju-1.4.0.tgz#a3abe2718af241a2b2904f84a625970f389ae32a"
   integrity sha1-o6vicYryQaKykE+EpiWXDzia4yo=
 
-jose@3.14.4:
-  version "3.14.4"
-  resolved "https://registry.yarnpkg.com/jose/-/jose-3.14.4.tgz#baddd71941acdf442584e6ad8c66074998959c62"
-  integrity sha512-MQd/SbOZM5mo1TvSytcNgSNfnM7Tyq5DBZaoGFYgMlkWDsr590Jua95RL7vLl2jvUm21zSeoVz0HOPn3/0gOug==
+jose@3.15.4:
+  version "3.15.4"
+  resolved "https://registry.yarnpkg.com/jose/-/jose-3.15.4.tgz#b9ebbbe596768539fc844daf470d3d9d12d05381"
+  integrity sha512-SXeGi+g5ZcNgV6o7f+Mx3Q1gaYMSBzAi3cmcZPxoeCEZPgfSCnnyfmMXzXoLDh+XL4KMtGvhOsYBoqQhnuR2rQ==
 
 jose@^2.0.5:
   version "2.0.5"
