@@ -27,6 +27,16 @@ export class ActorHttpInruptSolidClientAuthn extends ActorHttp {
 
   public async run(action: IActionHttp): Promise<IActorHttpOutput> {
     const session: Session = action.context!.get(ActorHttpInruptSolidClientAuthn.CONTEXT_KEY_SESSION);
+
+    // Log request
+    this.logInfo(action.context, `Requesting ${typeof action.input === 'string' ?
+      action.input :
+      action.input.url}`, () => ({
+      headers: action.init ? ActorHttp.headersToHash(new Headers(action.init.headers)) : undefined,
+      method: action.init?.method || 'GET',
+      webId: session.info.webId,
+    }));
+
     const response = await session.fetch(action.input, action.init);
 
     // Node-fetch does not support body.cancel, while it is mandatory according to the fetch and readablestream api.

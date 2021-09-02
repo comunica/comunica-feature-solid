@@ -1,6 +1,9 @@
+import { KeysCore } from '@comunica/context-entries';
 import { ActionContext, Bus } from '@comunica/core';
+import { LoggerVoid } from '@comunica/logger-void';
 import type { Session } from '@rubensworks/solid-client-authn-isomorphic';
 import { ActorHttpInruptSolidClientAuthn } from '../lib/ActorHttpInruptSolidClientAuthn';
+import 'cross-fetch/polyfill';
 
 describe('ActorHttpInruptSolidClientAuthn', () => {
   let bus: any;
@@ -24,6 +27,7 @@ describe('ActorHttpInruptSolidClientAuthn', () => {
       sessionLoggedIn = <any> {
         info: {
           isLoggedIn: true,
+          webId: 'WEBID',
         },
         fetch: jest.fn(async() => 'RESPONSE'),
       };
@@ -63,6 +67,43 @@ describe('ActorHttpInruptSolidClientAuthn', () => {
       });
       expect(sessionLoggedIn.fetch).toHaveBeenCalledWith('DUMMY', undefined);
       expect(response).toEqual('RESPONSE');
+    });
+
+    it('should run with a logger', async() => {
+      const logger = new LoggerVoid();
+      const spy = jest.spyOn(logger, 'info');
+      await actor.run({
+        input: <Request> { url: 'https://www.google.com/' },
+        init: { headers: new Headers({ a: 'b' }) },
+        context: ActionContext({
+          [KeysCore.log]: logger,
+          '@comunica/actor-http-inrupt-solid-client-authn:session': sessionLoggedIn,
+        }),
+      });
+      expect(spy).toHaveBeenCalledWith('Requesting https://www.google.com/', {
+        actor: 'actor',
+        headers: { a: 'b', 'user-agent': (<any> actor).userAgent },
+        method: 'GET',
+        webId: 'WEBID',
+      });
+    });
+
+    it('should run with a logger without init', async() => {
+      const logger = new LoggerVoid();
+      const spy = jest.spyOn(logger, 'info');
+      await actor.run({
+        input: <Request> { url: 'https://www.google.com/' },
+        context: ActionContext({
+          [KeysCore.log]: logger,
+          '@comunica/actor-http-inrupt-solid-client-authn:session': sessionLoggedIn,
+        }),
+      });
+      expect(spy).toHaveBeenCalledWith('Requesting https://www.google.com/', {
+        actor: 'actor',
+        headers: undefined,
+        method: 'GET',
+        webId: 'WEBID',
+      });
     });
 
     it('should run with a response body without cancel', async() => {
