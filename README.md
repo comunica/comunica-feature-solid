@@ -21,7 +21,8 @@ If you want to _use_ a Solid-enabled Comunica engine, have a look at [Comunica S
 
 Concretely, this monorepo adds Solid support to Comunica using the following packages:
 
-* TODO
+* [Comunica SPARQL Solid](https://github.com/comunica/comunica-feature-solid/tree/master/packages/actor-init-sparql-solid): A Comunica query engine that includes all Solid-related packages.
+* [Solid Auth Http Actor](https://github.com/comunica/comunica-feature-solid/tree/master/packages/actor-http-inrupt-solid-client-authn): HTTP actor that enables Solid authentication.
 
 [Click here to learn more about Comunica Solid, or to see live examples](https://comunica.dev/docs/query/advanced/solid/).
 

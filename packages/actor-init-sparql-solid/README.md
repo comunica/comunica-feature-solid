@@ -1,9 +1,11 @@
-# Comunica SPARQL Solid Init Actor
+# Comunica SPARQL Solid
 
 [![npm version](https://badge.fury.io/js/%40comunica%2Factor-init-sparql-solid.svg)](https://www.npmjs.com/package/@comunica/actor-init-sparql-solid)
 [![Docker Pulls](https://img.shields.io/docker/pulls/comunica/actor-init-sparql-solid.svg)](https://hub.docker.com/r/comunica/actor-init-sparql-solid/)
 
 Comunica SPARQL Solid is a SPARQL query engine for JavaScript that can query over [Solid](https://solidproject.org/) data pods.
+
+This package is safe to use in both Node.js and browser environments.
 
 **Warning: this project is still under development**
 
