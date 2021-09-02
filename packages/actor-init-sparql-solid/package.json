@@ -46,7 +46,7 @@
     "@comunica/runner-cli": "^1.22.0",
     "@comunica/runner": "^1.22.0",
     "solid-node-interactive-auth": "^1.0.1",
-    "@inrupt/solid-client-authn-node": "^1.11.2"
+    "@rubensworks/solid-client-authn-isomorphic": "^1.0.0"
   },
   "scripts": {
     "lint": "node \"../../node_modules/tslint/bin/tslint\" lib/**/*.ts test/**/*.ts --exclude '**/*.d.ts'",

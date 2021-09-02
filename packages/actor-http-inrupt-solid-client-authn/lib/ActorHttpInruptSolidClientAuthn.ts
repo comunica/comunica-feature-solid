@@ -2,7 +2,7 @@ import type { Readable } from 'stream';
 import type { IActionHttp, IActorHttpOutput } from '@comunica/bus-http';
 import { ActorHttp } from '@comunica/bus-http';
 import type { IActorArgs, IActorTest } from '@comunica/core';
-import type { Session } from '@inrupt/solid-client-authn-node';
+import type { Session } from '@rubensworks/solid-client-authn-isomorphic';
 
 /**
  * A comunica Inrupt Solid Client Authn Http Actor.

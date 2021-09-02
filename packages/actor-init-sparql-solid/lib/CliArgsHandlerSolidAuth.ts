@@ -1,5 +1,5 @@
 import type { ICliArgsHandler } from '@comunica/actor-init-sparql';
-import type { Session } from '@inrupt/solid-client-authn-node';
+import type { Session } from '@rubensworks/solid-client-authn-isomorphic';
 import type { Argv } from 'yargs';
 const { interactiveLogin } = require('solid-node-interactive-auth');
 

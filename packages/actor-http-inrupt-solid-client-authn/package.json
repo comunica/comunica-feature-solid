@@ -34,7 +34,7 @@
   "peerDependencies": {
     "@comunica/core": "^1.22.0",
     "@comunica/bus-http": "^1.22.0",
-    "@inrupt/solid-client-authn-node": "^1.11.0"
+    "@rubensworks/solid-client-authn-isomorphic": "^1.0.0"
   },
   "devDependencies": {
     "@comunica/core": "^1.22.0",

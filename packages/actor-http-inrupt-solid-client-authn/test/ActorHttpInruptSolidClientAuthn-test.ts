@@ -1,5 +1,5 @@
 import { ActionContext, Bus } from '@comunica/core';
-import type { Session } from '@inrupt/solid-client-authn-node';
+import type { Session } from '@rubensworks/solid-client-authn-isomorphic';
 import { ActorHttpInruptSolidClientAuthn } from '../lib/ActorHttpInruptSolidClientAuthn';
 
 describe('ActorHttpInruptSolidClientAuthn', () => {
