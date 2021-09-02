@@ -4,7 +4,7 @@
     "https://linkedsoftwaredependencies.org/bundles/npm/@comunica/runner/^1.0.0/components/context.jsonld",
 
     "https://linkedsoftwaredependencies.org/bundles/npm/@comunica/actor-http-inrupt-solid-client-authn/^1.0.0/components/context.jsonld",
-    "https://linkedsoftwaredependencies.org/bundles/npm/@comunica/actor-http-native/^1.0.0/components/context.jsonld",
+    "https://linkedsoftwaredependencies.org/bundles/npm/@comunica/actor-http-node-fetch/^1.0.0/components/context.jsonld",
     "https://linkedsoftwaredependencies.org/bundles/npm/@comunica/actor-http-proxy/^1.0.0/components/context.jsonld",
 
     "https://linkedsoftwaredependencies.org/bundles/npm/@comunica/bus-http/^1.0.0/components/context.jsonld",
@@ -28,13 +28,16 @@
         {
           "@id": "config-sets:http.json#myHttpFetcherSolid",
           "@type": "ActorHttpInruptSolidClientAuthn",
+          "cahisca:Actor/Http/InruptSolidClientAuthn#mediatorHttp": {
+            "@id": "config-sets:http.json#mediatorHttp"
+          },
           "beforeActor": [
             "config-sets:http.json#myHttpFetcherFallback"
           ]
         },
         {
           "@id": "config-sets:http.json#myHttpFetcherFallback",
-          "@type": "ActorHttpNative"
+          "@type": "ActorHttpNodeFetch"
         }
       ]
     },

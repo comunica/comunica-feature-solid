@@ -1,4 +1,4 @@
-import { KeysCore } from '@comunica/context-entries';
+import { KeysCore, KeysHttp } from '@comunica/context-entries';
 import { ActionContext, Bus } from '@comunica/core';
 import { LoggerVoid } from '@comunica/logger-void';
 import type { Session } from '@rubensworks/solid-client-authn-isomorphic';
@@ -7,9 +7,15 @@ import 'cross-fetch/polyfill';
 
 describe('ActorHttpInruptSolidClientAuthn', () => {
   let bus: any;
+  let mediatorHttp: any;
 
   beforeEach(() => {
     bus = new Bus({ name: 'bus' });
+    mediatorHttp = {
+      mediate: jest.fn(args => {
+        return { output: 'ABC', headers: new Headers({}) };
+      }),
+    };
   });
 
   describe('An ActorHttpInruptSolidClientAuthn instance', () => {
@@ -18,7 +24,7 @@ describe('ActorHttpInruptSolidClientAuthn', () => {
     let actor: ActorHttpInruptSolidClientAuthn;
 
     beforeEach(() => {
-      actor = new ActorHttpInruptSolidClientAuthn({ name: 'actor', bus });
+      actor = new ActorHttpInruptSolidClientAuthn({ name: 'actor', bus, mediatorHttp });
       sessionNotLoggedIn = <any> {
         info: {
           isLoggedIn: false,
@@ -51,6 +57,15 @@ describe('ActorHttpInruptSolidClientAuthn', () => {
         .toThrowError(`The provided Solid authn session is not in a logged in state, make sure to call session.login() first`);
     });
 
+    it('should not test with a fetch method', async() => {
+      await expect(actor.test({ input: 'DUMMY',
+        context: ActionContext({
+          '@comunica/actor-http-inrupt-solid-client-authn:session': sessionNotLoggedIn,
+          [KeysHttp.fetch]: true,
+        }) })).rejects
+        .toThrowError(`Unable to run when a custom fetch function has been configured`);
+    });
+
     it('should test with logged in session', async() => {
       await expect(actor.test({ input: 'DUMMY',
         context: ActionContext({
@@ -59,19 +74,26 @@ describe('ActorHttpInruptSolidClientAuthn', () => {
     });
 
     it('should run', async() => {
-      const response = await actor.run({
+      await actor.run({
         input: 'DUMMY',
         context: ActionContext({
           '@comunica/actor-http-inrupt-solid-client-authn:session': sessionLoggedIn,
         }),
       });
-      expect(sessionLoggedIn.fetch).toHaveBeenCalledWith('DUMMY', undefined);
-      expect(response).toEqual('RESPONSE');
+      expect(mediatorHttp.mediate).toHaveBeenCalledWith(
+        {
+          input: 'DUMMY',
+          context: ActionContext({
+            [KeysHttp.fetch]: sessionLoggedIn.fetch,
+          }),
+        },
+      );
     });
 
     it('should run with a logger', async() => {
       const logger = new LoggerVoid();
       const spy = jest.spyOn(logger, 'info');
+
       await actor.run({
         input: <Request> { url: 'https://www.google.com/' },
         init: { headers: new Headers({ a: 'b' }) },
@@ -80,17 +102,26 @@ describe('ActorHttpInruptSolidClientAuthn', () => {
           '@comunica/actor-http-inrupt-solid-client-authn:session': sessionLoggedIn,
         }),
       });
-      expect(spy).toHaveBeenCalledWith('Requesting https://www.google.com/', {
+      expect(mediatorHttp.mediate).toHaveBeenCalledWith(
+        {
+          input: <Request> { url: 'https://www.google.com/' },
+          init: { headers: new Headers({ a: 'b' }) },
+          context: ActionContext({
+            [KeysCore.log]: logger,
+            [KeysHttp.fetch]: sessionLoggedIn.fetch,
+          }),
+        },
+      );
+
+      expect(spy).toHaveBeenCalledWith(`Handling request to https://www.google.com/ as authenticated request for WEBID`, {
         actor: 'actor',
-        headers: { a: 'b', 'user-agent': (<any> actor).userAgent },
-        method: 'GET',
-        webId: 'WEBID',
       });
     });
 
     it('should run with a logger without init', async() => {
       const logger = new LoggerVoid();
       const spy = jest.spyOn(logger, 'info');
+
       await actor.run({
         input: <Request> { url: 'https://www.google.com/' },
         context: ActionContext({
@@ -98,49 +129,19 @@ describe('ActorHttpInruptSolidClientAuthn', () => {
           '@comunica/actor-http-inrupt-solid-client-authn:session': sessionLoggedIn,
         }),
       });
-      expect(spy).toHaveBeenCalledWith('Requesting https://www.google.com/', {
-        actor: 'actor',
-        headers: undefined,
-        method: 'GET',
-        webId: 'WEBID',
-      });
-    });
-
-    it('should run with a response body without cancel', async() => {
-      const body = {
-        destroy: jest.fn(),
-      };
-      sessionLoggedIn.fetch = <any> jest.fn(async() => ({
-        body,
-      }));
-      const response = await actor.run({
-        input: 'DUMMY',
-        context: ActionContext({
-          '@comunica/actor-http-inrupt-solid-client-authn:session': sessionLoggedIn,
-        }),
-      });
-      expect(sessionLoggedIn.fetch).toHaveBeenCalledWith('DUMMY', undefined);
-      expect(response.body!.cancel).toBeInstanceOf(Function);
-
-      const error = new Error('fetch client body cancel error');
-      await response.body!.cancel(error);
-      expect(body.destroy).toHaveBeenCalledWith(error);
-    });
-
-    it('should run with a response body with cancel', async() => {
-      sessionLoggedIn.fetch = <any> jest.fn(async() => ({
-        body: {
-          cancel: 'CANCEL',
+      expect(mediatorHttp.mediate).toHaveBeenCalledWith(
+        {
+          input: <Request> { url: 'https://www.google.com/' },
+          context: ActionContext({
+            [KeysCore.log]: logger,
+            [KeysHttp.fetch]: sessionLoggedIn.fetch,
+          }),
         },
-      }));
-      const response = await actor.run({
-        input: 'DUMMY',
-        context: ActionContext({
-          '@comunica/actor-http-inrupt-solid-client-authn:session': sessionLoggedIn,
-        }),
+      );
+
+      expect(spy).toHaveBeenCalledWith(`Handling request to https://www.google.com/ as authenticated request for WEBID`, {
+        actor: 'actor',
       });
-      expect(sessionLoggedIn.fetch).toHaveBeenCalledWith('DUMMY', undefined);
-      expect(response.body!.cancel).toEqual('CANCEL');
     });
   });
 });

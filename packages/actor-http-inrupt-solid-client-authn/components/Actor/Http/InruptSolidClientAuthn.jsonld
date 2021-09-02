@@ -11,9 +11,24 @@
       "extends": "cbh:Actor/Http",
       "requireElement": "ActorHttpInruptSolidClientAuthn",
       "comment": "A comunica Inrupt Solid Client Authn Http Actor.",
+      "parameters": [
+        {
+          "@id": "cahisca:Actor/Http/InruptSolidClientAuthn#mediatorHttp",
+          "comment": "The HTTP mediator",
+          "required": true,
+          "unique": true
+        }
+      ],
       "constructorArguments": [
         {
-          "extends": "cbh:Actor/Http/constructorArgumentsObject"
+          "@id": "cahisca:Actor/Http/InruptSolidClientAuthn#constructorArgumentsObject",
+          "extends": "cbh:Actor/Http/constructorArgumentsObject",
+          "fields": [
+            {
+              "keyRaw": "mediatorHttp",
+              "value": "cahisca:Actor/Http/InruptSolidClientAuthn#mediatorHttp"
+            }
+          ]
         }
       ]
     }

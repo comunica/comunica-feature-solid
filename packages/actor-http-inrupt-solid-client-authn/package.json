@@ -33,12 +33,15 @@
   ],
   "peerDependencies": {
     "@comunica/core": "^1.22.0",
-    "@comunica/bus-http": "^1.22.0",
-    "@rubensworks/solid-client-authn-isomorphic": "^1.0.0"
+    "@comunica/bus-http": "^1.22.0"
   },
   "devDependencies": {
     "@comunica/core": "^1.22.0",
     "@comunica/bus-http": "^1.22.0"
+  },
+  "dependencies": {
+    "@comunica/context-entries": "^1.22.0",
+    "@rubensworks/solid-client-authn-isomorphic": "^1.0.0"
   },
   "jest": {
     "globals": {
