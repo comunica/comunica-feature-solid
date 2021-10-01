@@ -33,11 +33,11 @@
   ],
   "peerDependencies": {
     "@comunica/core": "^1.22.0",
-    "@comunica/bus-http": "^1.22.0"
+    "@comunica/bus-http": "^1.22.1"
   },
   "devDependencies": {
     "@comunica/core": "^1.22.0",
-    "@comunica/bus-http": "^1.22.0"
+    "@comunica/bus-http": "^1.22.1"
   },
   "dependencies": {
     "@comunica/context-entries": "^1.22.0",
