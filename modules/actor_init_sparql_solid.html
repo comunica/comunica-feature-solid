@@ -74,9 +74,25 @@
 					<a href="https://hub.docker.com/r/comunica/actor-init-sparql-solid/"><img src="https://img.shields.io/docker/pulls/comunica/actor-init-sparql-solid.svg" alt="Docker Pulls"></a></p>
 					<p>Comunica SPARQL Solid is a SPARQL query engine for JavaScript that can query over <a href="https://solidproject.org/">Solid</a> data pods.</p>
 					<p>This package is safe to use in both Node.js and browser environments.</p>
-					<p><strong>Warning: this project is still under development</strong></p>
 					<p>This module is part of the <a href="https://comunica.dev/">Comunica framework</a>.
 					<a href="https://comunica.dev/docs/query/advanced/solid/">Click here to learn more about Comunica and Solid</a>.</p>
+					<a href="#known-issues" id="known-issues" style="color: inherit; text-decoration: none;">
+						<h2>Known issues</h2>
+					</a>
+					<p>This library has the following known issues in certain cases, that are out of our control (but have been reported).</p>
+					<ul>
+						<li><strong>Web Workers</strong>: This library can not be used within due to an open issue in <a href="https://github.com/inrupt/solid-client-authn-js/issues/1657">https://github.com/inrupt/solid-client-authn-js/issues/1657</a></li>
+						<li><strong>Enterprise Solid Server</strong> (<a href="https://pod.inrupt.com/">https://pod.inrupt.com/</a>):<ul>
+								<li>Patch requests are not accepted, so only new documents can be created, but existing ones can not be modified.</li>
+								<li>Due to missing <code>Accept-Patch</code>, and <code>Accept-Put</code> headers, <a href="https://comunica.dev/docs/query/advanced/destination_types/">the destination type has to be forced</a>. This will only work for creating new documents via the <code>putLdp</code> destination type. Updating existing documents via <code>patchSparqlUpdate</code> are currently not possible because of the previous issue. </li>
+							</ul>
+						</li>
+						<li><strong>Node Solid Server</strong> (<a href="https://solidcommunity.net/">https://solidcommunity.net/</a>):<ul>
+								<li>Querying or updating existing documents fails with the error <code>Error translating between RDF formats</code> (<a href="https://github.com/solid/node-solid-server/issues/1618">https://github.com/solid/node-solid-server/issues/1618</a>). Creating new documents does work.</li>
+							</ul>
+						</li>
+					</ul>
+					<p>No issues are known with the <a href="https://github.com/solid/community-server/">Community Solid Server</a></p>
 					<a href="#install" id="install" style="color: inherit; text-decoration: none;">
 						<h2>Install</h2>
 					</a>
@@ -89,12 +105,12 @@
 						<h2>Usage</h2>
 					</a>
 					<p>Show 100 triples from a private resource
-					by authenticating through the <a href="https://solidcommunity.net/">https://solidcommunity.net/</a> identity provider:</p>
+					by authenticating through the <a href="https://solidcommunity.net/">https://solidcommunity.net/</a> identity provider (when using <a href="https://pod.inrupt.com/">https://pod.inrupt.com/</a>, your IDP will be <a href="https://broker.pod.inrupt.com/">https://broker.pod.inrupt.com/</a>):</p>
 					<pre><code class="language-bash"><span style="color: #000000">$ comunica-sparql-solid --idp https://solidcommunity.net/ \</span>
 <span style="color: #000000">  http://example.org/private-resource.ttl \</span>
 <span style="color: #000000">  </span><span style="color: #A31515">&quot;SELECT * WHERE {</span>
 <span style="color: #A31515">       ?s ?p ?o</span>
-<span style="color: #A31515">   } LIMIT 100&quot;</span><span style="color: #000000"> --lenient</span>
+<span style="color: #A31515">   } LIMIT 100&quot;</span>
 </code></pre>
 					<p>This command will connect with the given identity provider,
 						and open your browser to log in with your WebID.
@@ -112,6 +128,7 @@
 					<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">newEngine</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;@comunica/actor-init-sparql-solid&#039;</span><span style="color: #000000">).</span><span style="color: #001080">newEngine</span><span style="color: #000000">;</span>
 <span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">interactiveLogin</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;solid-node-interactive-auth&#039;</span><span style="color: #000000">);</span>
 
+<span style="color: #008000">// This will open your Web browser to log in</span>
 <span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">session</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">interactiveLogin</span><span style="color: #000000">({ </span><span style="color: #001080">oidcIssuer:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;https://solidcommunity.net/&#039;</span><span style="color: #000000"> });</span>
 <span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">myEngine</span><span style="color: #000000"> = </span><span style="color: #795E26">newEngine</span><span style="color: #000000">();</span>
 
@@ -119,7 +136,7 @@
 <span style="color: #A31515">  SELECT * WHERE {</span>
 <span style="color: #A31515">      ?s ?p ?o</span>
 <span style="color: #A31515">  } LIMIT 100`</span><span style="color: #000000">, {</span>
-<span style="color: #000000">  </span><span style="color: #001080">sources:</span><span style="color: #000000"> [</span><span style="color: #001080">session</span><span style="color: #000000">.</span><span style="color: #001080">info</span><span style="color: #000000">.</span><span style="color: #001080">webId</span><span style="color: #000000">],</span>
+<span style="color: #000000">  </span><span style="color: #001080">sources:</span><span style="color: #000000"> [</span><span style="color: #001080">session</span><span style="color: #000000">.</span><span style="color: #001080">info</span><span style="color: #000000">.</span><span style="color: #001080">webId</span><span style="color: #000000">], </span><span style="color: #008000">// Sets your profile as query source</span>
 <span style="color: #000000">  </span><span style="color: #A31515">&#039;@comunica/actor-http-inrupt-solid-client-authn:session&#039;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #001080">session</span><span style="color: #000000">,</span>
 <span style="color: #000000">});</span>
 
@@ -145,8 +162,7 @@
 					<p>Start a webservice exposing a private resource via the SPARQL protocol, i.e., a <em>SPARQL endpoint</em>,
 					by authenticating through the <a href="https://solidcommunity.net/">https://solidcommunity.net/</a> identity provider.</p>
 					<pre><code class="language-bash"><span style="color: #000000">$ comunica-sparql-solid-http --idp https://solidcommunity.net/ \</span>
-<span style="color: #000000">  http://example.org/private-resource.ttl \</span>
-<span style="color: #000000">  --lenient</span>
+<span style="color: #000000">  http://example.org/private-resource.ttl</span>
 </code></pre>
 					<p>Show the help with all options:</p>
 					<pre><code class="language-bash"><span style="color: #000000">$ comunica-sparql-solid-http --help</span>
