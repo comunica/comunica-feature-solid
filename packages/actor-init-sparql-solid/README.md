@@ -7,10 +7,21 @@ Comunica SPARQL Solid is a SPARQL query engine for JavaScript that can query ove
 
 This package is safe to use in both Node.js and browser environments.
 
-**Warning: this project is still under development**
-
 This module is part of the [Comunica framework](https://comunica.dev/).
 [Click here to learn more about Comunica and Solid](https://comunica.dev/docs/query/advanced/solid/).
+
+## Known issues
+
+This library has the following known issues in certain cases, that are out of our control (but have been reported).
+
+* **Web Workers**: This library can not be used within due to an open issue in https://github.com/inrupt/solid-client-authn-js/issues/1657
+* **Enterprise Solid Server** (https://pod.inrupt.com/):
+  * Patch requests are not accepted, so only new documents can be created, but existing ones can not be modified.
+  * Due to missing `Accept-Patch`, and `Accept-Put` headers, [the destination type has to be forced](https://comunica.dev/docs/query/advanced/destination_types/). This will only work for creating new documents via the `putLdp` destination type. Updating existing documents via `patchSparqlUpdate` are currently not possible because of the previous issue. 
+* **Node Solid Server** (https://solidcommunity.net/):
+  * Querying or updating existing documents fails with the error `Error translating between RDF formats` (https://github.com/solid/node-solid-server/issues/1618). Creating new documents does work.
+
+No issues are known with the [Community Solid Server](https://github.com/solid/community-server/)
 
 ## Install
 
@@ -27,14 +38,14 @@ $ npm install -g @comunica/actor-init-sparql-solid
 ## Usage
 
 Show 100 triples from a private resource
-by authenticating through the https://solidcommunity.net/ identity provider:
+by authenticating through the https://solidcommunity.net/ identity provider (when using https://pod.inrupt.com/, your IDP will be https://broker.pod.inrupt.com/):
 
 ```bash
 $ comunica-sparql-solid --idp https://solidcommunity.net/ \
   http://example.org/private-resource.ttl \
   "SELECT * WHERE {
        ?s ?p ?o
-   } LIMIT 100" --lenient
+   } LIMIT 100"
 ```
 
 This command will connect with the given identity provider,
@@ -60,6 +71,7 @@ This engine can be used in JavaScript/TypeScript applications as follows:
 const newEngine = require('@comunica/actor-init-sparql-solid').newEngine;
 const { interactiveLogin } = require('solid-node-interactive-auth');
 
+// This will open your Web browser to log in
 const session = await interactiveLogin({ oidcIssuer: 'https://solidcommunity.net/' });
 const myEngine = newEngine();
 
@@ -67,7 +79,7 @@ const result = await myEngine.query(`
   SELECT * WHERE {
       ?s ?p ?o
   } LIMIT 100`, {
-  sources: [session.info.webId],
+  sources: [session.info.webId], // Sets your profile as query source
   '@comunica/actor-http-inrupt-solid-client-authn:session': session,
 });
 
@@ -96,8 +108,7 @@ by authenticating through the https://solidcommunity.net/ identity provider.
 
 ```bash
 $ comunica-sparql-solid-http --idp https://solidcommunity.net/ \
-  http://example.org/private-resource.ttl \
-  --lenient
+  http://example.org/private-resource.ttl
 ```
 
 Show the help with all options:

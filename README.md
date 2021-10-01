@@ -17,7 +17,7 @@
 **[Learn more about Comunica on our website](https://comunica.dev/).**
 
 This is a monorepo that contains packages for allowing [Comunica](https://github.com/comunica/comunica) to query over [Solid](https://solidproject.org/) data pods.
-If you want to _use_ a Solid-enabled Comunica engine, have a look at [Comunica SPARQL Solid](https://github.com/comunica/comunica-feature-solid/tree/master/packages/actor-init-sparql-solid).
+**If you want to _use_ a Solid-enabled Comunica engine, have a look at [Comunica SPARQL Solid](https://github.com/comunica/comunica-feature-solid/tree/master/packages/actor-init-sparql-solid).**
 
 Concretely, this monorepo adds Solid support to Comunica using the following packages:
 
