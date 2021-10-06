@@ -27,6 +27,7 @@
   },
   "homepage": "https://comunica.dev/",
   "files": [
+    "components",
     "config",
     "bin/**/*.d.ts",
     "bin/**/*.js",
