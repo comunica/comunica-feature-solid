@@ -1,6 +1,7 @@
 // Copied from: https://github.com/comunica/comunica/blob/master/packages/actor-init-sparql/webpack.config.js
 const path = require('path');
 const ProgressPlugin = require('webpack').ProgressPlugin;
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 
 module.exports = {
   entry: [ path.resolve(__dirname, 'index-browser.js') ],
@@ -21,6 +22,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new NodePolyfillPlugin(),
     new ProgressPlugin(),
   ]
 };
