@@ -54,5 +54,8 @@
     "build": "node \"../../node_modules/typescript/bin/tsc\"",
     "validate": "npm ls",
     "prepare": "comunica-compile-config config/config-default.json > engine-default.js"
+  },
+  "browser": {
+    "./index.js": "./index-browser.js"
   }
 }
