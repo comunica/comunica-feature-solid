@@ -57,6 +57,6 @@
     "browser": "npm run prepare && \"../../node_modules/webpack/bin/webpack.js\" --config webpack.config.js --mode production"
   },
   "browser": {
-    "./index.js": "./comunica-browser.js"
+    "./index.js": "./index-browser.js"
   }
 }
