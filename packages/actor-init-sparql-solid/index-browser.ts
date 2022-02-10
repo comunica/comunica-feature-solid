@@ -6,5 +6,5 @@ import type { ActorInitSparql } from '@comunica/actor-init-sparql/lib/ActorInitS
  * @return {ActorInitSparql} A comunica engine.
  */
 export function newEngine(): ActorInitSparql {
-  return require('./engine-browser.js');
+  return require('./engine-default.js');
 }
