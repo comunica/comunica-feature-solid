@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.0.2"></a>
+## [v1.0.2](https://github.com/comunica/comunica-feature-solid/compare/v1.0.1...v1.0.2) - 2022-02-14
+
+### Fixed
+* [Fix invalid browser entrypoint](https://github.com/comunica/comunica-feature-solid/commit/0c08656fa556edcb30f7bfb2174e2678340e562d)
+
 <a name="v1.0.1"></a>
 ## [v1.0.1](https://github.com/comunica/comunica-feature-solid/compare/v1.0.0...v1.0.1) - 2021-10-06
 
