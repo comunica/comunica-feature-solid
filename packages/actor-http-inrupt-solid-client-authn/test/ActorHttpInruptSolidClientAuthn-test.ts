@@ -39,19 +39,14 @@ describe('ActorHttpInruptSolidClientAuthn', () => {
       };
     });
 
-    it('should not test without context', async() => {
-      await expect(actor.test({ input: 'DUMMY' })).rejects
-        .toThrowError(`Unable to find Solid authn session in context with key '@comunica/actor-http-inrupt-solid-client-authn:session'`);
-    });
-
     it('should not test with empty context', async() => {
-      await expect(actor.test({ input: 'DUMMY', context: ActionContext({}) })).rejects
+      await expect(actor.test({ input: 'DUMMY', context: new ActionContext({}) })).rejects
         .toThrowError(`Unable to find Solid authn session in context with key '@comunica/actor-http-inrupt-solid-client-authn:session'`);
     });
 
     it('should not test with non-logged in session', async() => {
       await expect(actor.test({ input: 'DUMMY',
-        context: ActionContext({
+        context: new ActionContext({
           '@comunica/actor-http-inrupt-solid-client-authn:session': sessionNotLoggedIn,
         }) })).rejects
         .toThrowError(`The provided Solid authn session is not in a logged in state, make sure to call session.login() first`);
@@ -59,16 +54,16 @@ describe('ActorHttpInruptSolidClientAuthn', () => {
 
     it('should not test with a fetch method', async() => {
       await expect(actor.test({ input: 'DUMMY',
-        context: ActionContext({
+        context: new ActionContext({
           '@comunica/actor-http-inrupt-solid-client-authn:session': sessionNotLoggedIn,
-          [KeysHttp.fetch]: true,
+          [KeysHttp.fetch.name]: true,
         }) })).rejects
         .toThrowError(`Unable to run when a custom fetch function has been configured`);
     });
 
     it('should test with logged in session', async() => {
       await expect(actor.test({ input: 'DUMMY',
-        context: ActionContext({
+        context: new ActionContext({
           '@comunica/actor-http-inrupt-solid-client-authn:session': sessionLoggedIn,
         }) })).resolves.toBeTruthy();
     });
@@ -76,15 +71,15 @@ describe('ActorHttpInruptSolidClientAuthn', () => {
     it('should run', async() => {
       await actor.run({
         input: 'DUMMY',
-        context: ActionContext({
+        context: new ActionContext({
           '@comunica/actor-http-inrupt-solid-client-authn:session': sessionLoggedIn,
         }),
       });
       expect(mediatorHttp.mediate).toHaveBeenCalledWith(
         {
           input: 'DUMMY',
-          context: ActionContext({
-            [KeysHttp.fetch]: sessionLoggedIn.fetch,
+          context: new ActionContext({
+            [KeysHttp.fetch.name]: sessionLoggedIn.fetch,
           }),
         },
       );
@@ -97,8 +92,8 @@ describe('ActorHttpInruptSolidClientAuthn', () => {
       await actor.run({
         input: <Request> { url: 'https://www.google.com/' },
         init: { headers: new Headers({ a: 'b' }) },
-        context: ActionContext({
-          [KeysCore.log]: logger,
+        context: new ActionContext({
+          [KeysCore.log.name]: logger,
           '@comunica/actor-http-inrupt-solid-client-authn:session': sessionLoggedIn,
         }),
       });
@@ -106,9 +101,9 @@ describe('ActorHttpInruptSolidClientAuthn', () => {
         {
           input: <Request> { url: 'https://www.google.com/' },
           init: { headers: new Headers({ a: 'b' }) },
-          context: ActionContext({
-            [KeysCore.log]: logger,
-            [KeysHttp.fetch]: sessionLoggedIn.fetch,
+          context: new ActionContext({
+            [KeysCore.log.name]: logger,
+            [KeysHttp.fetch.name]: sessionLoggedIn.fetch,
           }),
         },
       );
@@ -124,17 +119,17 @@ describe('ActorHttpInruptSolidClientAuthn', () => {
 
       await actor.run({
         input: <Request> { url: 'https://www.google.com/' },
-        context: ActionContext({
-          [KeysCore.log]: logger,
+        context: new ActionContext({
+          [KeysCore.log.name]: logger,
           '@comunica/actor-http-inrupt-solid-client-authn:session': sessionLoggedIn,
         }),
       });
       expect(mediatorHttp.mediate).toHaveBeenCalledWith(
         {
           input: <Request> { url: 'https://www.google.com/' },
-          context: ActionContext({
-            [KeysCore.log]: logger,
-            [KeysHttp.fetch]: sessionLoggedIn.fetch,
+          context: new ActionContext({
+            [KeysCore.log.name]: logger,
+            [KeysHttp.fetch.name]: sessionLoggedIn.fetch,
           }),
         },
       );

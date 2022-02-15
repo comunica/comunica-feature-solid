@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-import { KeysInitSparql } from '@comunica/context-entries';
+import { KeysInitQuery } from '@comunica/context-entries';
 import { ActionContext } from '@comunica/core';
-import { runArgsInProcess } from '@comunica/runner-cli';
+import { runArgsInProcessStatic } from '@comunica/runner-cli';
 import { CliArgsHandlerSolidAuth } from '../lib/CliArgsHandlerSolidAuth';
 const cliArgsHandlerSolidAuth = new CliArgsHandlerSolidAuth();
-runArgsInProcess(`${__dirname}/../`, `${__dirname}/../config/config-default.json`, {
-  context: ActionContext({
-    [KeysInitSparql.cliArgsHandlers]: [ cliArgsHandlerSolidAuth ],
+runArgsInProcessStatic(require('../engine-default.js'), {
+  context: new ActionContext({
+    [KeysInitQuery.cliArgsHandlers.name]: [ cliArgsHandlerSolidAuth ],
   }),
   onDone() {
     if (cliArgsHandlerSolidAuth.session) {

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { HttpServiceSparqlEndpoint } from '@comunica/actor-init-sparql';
+import { HttpServiceSparqlEndpoint } from '@comunica/actor-init-query';
 import { CliArgsHandlerSolidAuth } from '../lib/CliArgsHandlerSolidAuth';
 
 const defaultConfigPath = `${__dirname}/../config/config-default.json`;

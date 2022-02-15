@@ -21,3 +21,5 @@ earl.ttl
 .eslintcache
 web-clients/builds
 componentsjs-error-state.json
+engines/*/components
+packages/*/components
