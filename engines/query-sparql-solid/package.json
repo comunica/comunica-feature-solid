@@ -12,9 +12,14 @@
   "sideEffects": false,
   "keywords": [
     "comunica",
-    "actor",
-    "init",
     "sparql",
+    "engine",
+    "query",
+    "update",
+    "sparql engine",
+    "sparql query",
+    "sparql update",
+    "sparql 1.1",
     "solid"
   ],
   "license": "MIT",

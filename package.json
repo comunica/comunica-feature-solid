@@ -5,9 +5,6 @@
     "engines/*",
     "packages/*"
   ],
-  "engines": {
-    "node": ">=8.0"
-  },
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/polyfill": "^7.12.1",
