@@ -13,7 +13,7 @@
     "@types/node": "^16.0.0",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
-    "arrayify-stream": "^1.0.0",
+    "arrayify-stream": "^2.0.0",
     "asynciterator": "^3.0.3",
     "babel-loader": "^8.0.2",
     "eslint": "^7.9.0",
