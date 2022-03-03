@@ -1,62 +1,15 @@
 {
   "name": "@comunica/actor-init-sparql-solid",
-  "version": "1.0.2",
-  "description": "A Comunica engine for query evaluation over Solid data pods",
-  "lsd:module": true,
-  "main": "index.js",
-  "typings": "index",
-  "repository": "https://github.com/comunica/comunica-feature-solid/tree/master/packages/actor-init-sparql-solid",
+  "version": "2.0.0",
+  "description": "Deprecated: A SPARQL query engine for querying over Solid pods",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/comunica/comunica-feature-solid.git",
+    "directory": "packages/actor-init-sparql-solid"
+  },
   "publishConfig": {
     "access": "public"
   },
-  "keywords": [
-    "comunica",
-    "actor",
-    "init",
-    "sparql",
-    "solid"
-  ],
   "license": "MIT",
-  "bin": {
-    "comunica-sparql-solid": "./bin/query.js",
-    "comunica-sparql-solid-http": "./bin/http.js",
-    "comunica-dynamic-sparql-solid": "./bin/query-dynamic.js"
-  },
-  "bugs": {
-    "url": "https://github.com/comunica/comunica/issues"
-  },
-  "homepage": "https://comunica.dev/",
-  "files": [
-    "components",
-    "config",
-    "bin/**/*.d.ts",
-    "bin/**/*.js",
-    "lib/**/*.d.ts",
-    "lib/**/*.js",
-    "index.js",
-    "index.d.ts",
-    "index-browser.d.ts",
-    "index-browser.js",
-    "engine-default.js"
-  ],
-  "dependencies": {
-    "@comunica/actor-http-inrupt-solid-client-authn": "^1.0.1",
-    "@comunica/actor-init-sparql": "^1.22.2",
-    "@comunica/context-entries": "^1.22.0",
-    "@comunica/core": "^1.22.0",
-    "@comunica/runner": "^1.22.0",
-    "@comunica/runner-cli": "^1.22.0",
-    "@rubensworks/solid-client-authn-isomorphic": "^1.0.0",
-    "solid-node-interactive-auth": "^1.0.1"
-  },
-  "scripts": {
-    "lint": "node \"../../node_modules/tslint/bin/tslint\" lib/**/*.ts test/**/*.ts --exclude '**/*.d.ts'",
-    "build": "node \"../../node_modules/typescript/bin/tsc\"",
-    "validate": "npm ls",
-    "prepare": "comunica-compile-config config/config-default.json > engine-default.js",
-    "browser": "npm run prepare && \"../../node_modules/webpack/bin/webpack.js\" --config webpack.config.js --mode production"
-  },
-  "browser": {
-    "./index.js": "./index-browser.js"
-  }
+  "homepage": "https://comunica.dev/"
 }

@@ -4,7 +4,7 @@ const ProgressPlugin = require('webpack').ProgressPlugin;
 const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 
 module.exports = {
-  entry: [ path.resolve(__dirname, 'index-browser.js') ],
+  entry: [ path.resolve(__dirname, 'lib/index-browser.js') ],
   output: {
     filename: 'comunica-browser.js',
     path: __dirname,

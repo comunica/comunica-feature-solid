@@ -1,14 +1,14 @@
 {
-  "name": "@comunica/actor-http-inrupt-solid-client-authn",
+  "name": "@comunica/config-query-sparql-solid",
   "version": "2.0.0",
-  "description": "A inrupt-solid-client-authn http actor",
+  "description": "default configuration files for Comunica SPARQL Solid",
   "lsd:module": true,
   "main": "lib/index.js",
   "typings": "lib/index",
   "repository": {
     "type": "git",
-    "url": "https://github.com/comunica/comunica.git",
-    "directory": "packages/actor-http-inrupt-solid-client-authn"
+    "url": "https://github.com/comunica/comunica-feature-solid.git",
+    "directory": "engines/config-query-sparql-solid"
   },
   "publishConfig": {
     "access": "public"
@@ -16,29 +16,30 @@
   "sideEffects": false,
   "keywords": [
     "comunica",
-    "actor",
-    "http",
-    "inrupt-solid-client-authn"
+    "sparql",
+    "engine",
+    "query",
+    "update",
+    "config",
+    "solid"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/comunica/comunica/issues"
+    "url": "https://github.com/comunica/comunica-feature-solid/issues"
   },
   "homepage": "https://comunica.dev/",
   "files": [
     "components",
+    "config",
     "lib/**/*.d.ts",
     "lib/**/*.js"
   ],
-  "dependencies": {
-    "@comunica/bus-http": "^2.0.1",
-    "@comunica/core": "^2.0.1",
-    "@comunica/context-entries": "^2.0.1",
-    "@rubensworks/solid-client-authn-isomorphic": "^1.0.0"
-  },
   "scripts": {
     "build": "npm run build:ts && npm run build:components",
     "build:ts": "node \"../../node_modules/typescript/bin/tsc\"",
     "build:components": "componentsjs-generator"
+  },
+  "dependencies": {
+    "@comunica/config-query-sparql": "2.0.1-alpha.5.0"
   }
 }

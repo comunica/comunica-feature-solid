@@ -5,9 +5,9 @@ module.exports = {
   name: 'Comunica Solid',
   out: 'documentation',
   theme: 'default',
-  'external-modulemap': '.*packages/([^/]+)/.*',
-  entryPoints: getPackagesSync(path.join(__dirname, 'packages')).map(
-    pkg => path.relative(__dirname, pkg.location)
+  'external-modulemap': __dirname + '/[^/]+/([^/]+)/.*',
+  entryPoints: getPackagesSync(__dirname).map(
+      pkg => path.relative(__dirname, pkg.location)
   ),
   excludeExternals: false,
   disableOutputCheck: true

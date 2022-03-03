@@ -39,7 +39,7 @@ After installing, this package can be added to your engine's configuration as fo
   "actors": [
     ...
     {
-      "@id": "config-sets:http.json#myHttpFetcherSolid",
+      "@id": "urn:comunica:default:http/actors#inrupt-solid-client-authn",
       "@type": "ActorHttpInruptSolidClientAuthn"
     }
   ]

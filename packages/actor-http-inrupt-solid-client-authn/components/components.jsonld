@@ -1,9 +1,0 @@
-{
-  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/@comunica/actor-http-inrupt-solid-client-authn/^1.0.0/components/context.jsonld",
-  "@id": "npmd:@comunica/actor-http-inrupt-solid-client-authn",
-  "@type": "Module",
-  "requireName": "@comunica/actor-http-inrupt-solid-client-authn",
-  "import": [
-    "files-cahisca:components/Actor/Http/InruptSolidClientAuthn.jsonld"
-  ]
-}

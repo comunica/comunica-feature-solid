@@ -1,0 +1,13 @@
+{
+  "source": "lib",
+  "ignorePackagePaths": [
+    "engines/query-sparql-solid",
+    "packages/actor-init-sparql-solid"
+  ],
+  "ignoreComponents": [
+    "Response",
+    "RequestInfo",
+    "RequestInit"
+  ],
+  "modulePrefix": {}
+}
