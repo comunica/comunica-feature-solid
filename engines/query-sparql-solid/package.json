@@ -1,6 +1,6 @@
 {
   "name": "@comunica/query-sparql-solid",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A Comunica engine for query evaluation over Solid data pods",
   "lsd:module": true,
   "main": "lib/index.js",
@@ -48,6 +48,7 @@
     "@comunica/actor-dereference-rdf-parse": "^2.0.2",
     "@comunica/actor-hash-bindings-sha1": "^2.0.1",
     "@comunica/actor-http-fetch": "^2.0.1",
+    "@comunica/actor-http-inrupt-solid-client-authn": "^2.0.1",
     "@comunica/actor-http-proxy": "^2.0.1",
     "@comunica/actor-init-query": "^2.0.3",
     "@comunica/actor-optimize-query-operation-bgp-to-join": "^2.0.1",
@@ -153,6 +154,7 @@
     "@comunica/actor-rdf-update-quads-rdfjs-store": "^2.0.1",
     "@comunica/bus-http-invalidate": "^2.0.1",
     "@comunica/config-query-sparql": "^2.0.1",
+    "@comunica/context-entries": "^2.0.1",
     "@comunica/core": "^2.0.1",
     "@comunica/logger-void": "^2.0.1",
     "@comunica/mediator-all": "^2.0.1",
@@ -163,8 +165,6 @@
     "@comunica/mediator-race": "^2.0.1",
     "@comunica/runner": "^2.0.3",
     "@comunica/runner-cli": "^2.0.3",
-    "@comunica/context-entries": "^2.0.1",
-    "@comunica/actor-http-inrupt-solid-client-authn": "^2.0.0",
     "@rubensworks/solid-client-authn-isomorphic": "^1.0.0",
     "solid-node-interactive-auth": "^1.0.1"
   },
