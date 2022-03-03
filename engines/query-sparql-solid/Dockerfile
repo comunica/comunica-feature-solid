@@ -1,10 +1,11 @@
-FROM node:10
+FROM node:16
 
 # Install location
 ENV dir /var/www/@comunica/query-sparql-solid/
 
 # Copy the engine files (generated from package.json!files)
 COPY config ${dir}/config/
+COPY lib/*.js ${dir}/lib/
 COPY bin/*.js ${dir}/bin/
 COPY engine-default.js package.json ${dir}
 
