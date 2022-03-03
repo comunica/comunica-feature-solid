@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>actor-init-sparql-solid | Comunica Solid</title>
+	<title>query-sparql-solid | Comunica Solid</title>
 	<meta name="description" content="Documentation for Comunica Solid">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,10 +55,10 @@
 					<a href="../modules.html">Comunica Solid</a>
 				</li>
 				<li>
-					<a href="actor_init_sparql_solid.html">actor-init-sparql-solid</a>
+					<a href="query_sparql_solid.html">query-sparql-solid</a>
 				</li>
 			</ul>
-			<h1>Module actor-init-sparql-solid</h1>
+			<h1>Module query-sparql-solid</h1>
 		</div>
 	</div>
 </header>
@@ -70,8 +70,8 @@
 					<a href="#comunica-sparql-solid" id="comunica-sparql-solid" style="color: inherit; text-decoration: none;">
 						<h1>Comunica SPARQL Solid</h1>
 					</a>
-					<p><a href="https://www.npmjs.com/package/@comunica/actor-init-sparql-solid"><img src="https://badge.fury.io/js/%40comunica%2Factor-init-sparql-solid.svg" alt="npm version"></a>
-					<a href="https://hub.docker.com/r/comunica/actor-init-sparql-solid/"><img src="https://img.shields.io/docker/pulls/comunica/actor-init-sparql-solid.svg" alt="Docker Pulls"></a></p>
+					<p><a href="https://www.npmjs.com/package/@comunica/query-sparql-solid"><img src="https://badge.fury.io/js/%40comunica%2Fquery-sparql-solid.svg" alt="npm version"></a>
+					<a href="https://hub.docker.com/r/comunica/query-sparql-solid/"><img src="https://img.shields.io/docker/pulls/comunica/query-sparql-solid.svg" alt="Docker Pulls"></a></p>
 					<p>Comunica SPARQL Solid is a SPARQL query engine for JavaScript that can query over <a href="https://solidproject.org/">Solid</a> data pods.</p>
 					<p>This package is safe to use in both Node.js and browser environments.</p>
 					<p>This module is part of the <a href="https://comunica.dev/">Comunica framework</a>.
@@ -84,7 +84,7 @@
 						<li><strong>Web Workers</strong>: This library can not be used within due to an open issue in <a href="https://github.com/inrupt/solid-client-authn-js/issues/1657">https://github.com/inrupt/solid-client-authn-js/issues/1657</a></li>
 						<li><strong>Enterprise Solid Server</strong> (<a href="https://pod.inrupt.com/">https://pod.inrupt.com/</a>):<ul>
 								<li>Patch requests are not accepted, so only new documents can be created, but existing ones can not be modified.</li>
-								<li>Due to missing <code>Accept-Patch</code>, and <code>Accept-Put</code> headers, <a href="https://comunica.dev/docs/query/advanced/destination_types/">the destination type has to be forced</a>. This will only work for creating new documents via the <code>putLdp</code> destination type. Updating existing documents via <code>patchSparqlUpdate</code> are currently not possible because of the previous issue. </li>
+								<li>Due to missing <code>Accept-Patch</code>, and <code>Accept-Put</code> headers, <a href="https://comunica.dev/docs/query/advanced/destination_types/">the destination type has to be forced</a>. This will only work for creating new documents via the <code>putLdp</code> destination type. Updating existing documents via <code>patchSparqlUpdate</code> are currently not possible because of the previous issue.</li>
 							</ul>
 						</li>
 						<li><strong>Node Solid Server</strong> (<a href="https://solidcommunity.net/">https://solidcommunity.net/</a>):<ul>
@@ -96,10 +96,10 @@
 					<a href="#install" id="install" style="color: inherit; text-decoration: none;">
 						<h2>Install</h2>
 					</a>
-					<pre><code class="language-bash"><span style="color: #000000">$ yarn add @comunica/actor-init-sparql-solid</span>
+					<pre><code class="language-bash"><span style="color: #000000">$ yarn add @comunica/query-sparql-solid</span>
 </code></pre>
 					<p>or</p>
-					<pre><code class="language-bash"><span style="color: #000000">$ npm install -g @comunica/actor-init-sparql-solid</span>
+					<pre><code class="language-bash"><span style="color: #000000">$ npm install -g @comunica/query-sparql-solid</span>
 </code></pre>
 					<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
 						<h2>Usage</h2>
@@ -118,21 +118,21 @@
 					<p>Show the help with all options:</p>
 					<pre><code class="language-bash"><span style="color: #000000">$ comunica-sparql-solid --help</span>
 </code></pre>
-					<p>Just like <a href="https://github.com/comunica/comunica/tree/master/packages/actor-init-sparql">Comunica SPARQL</a>,
-					a <a href="https://github.com/comunica/comunica/tree/master/packages/actor-init-sparql#usage-from-the-command-line">dynamic variant</a> (<code>comunica-dynamic-sparql-solid</code>) also exists.</p>
+					<p>Just like <a href="https://github.com/comunica/comunica/tree/master/packages/query-sparql">Comunica SPARQL</a>,
+					a <a href="https://github.com/comunica/comunica/tree/master/packages/query-sparql#usage-from-the-command-line">dynamic variant</a> (<code>comunica-dynamic-sparql-solid</code>) also exists.</p>
 					<p><em><a href="https://comunica.dev/docs/query/getting_started/query_cli/"><strong>Read more</strong> about querying from the command line</a>.</em></p>
 					<a href="#usage-within-application" id="usage-within-application" style="color: inherit; text-decoration: none;">
 						<h3>Usage within application</h3>
 					</a>
 					<p>This engine can be used in JavaScript/TypeScript applications as follows:</p>
-					<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">newEngine</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;@comunica/actor-init-sparql-solid&#039;</span><span style="color: #000000">).</span><span style="color: #001080">newEngine</span><span style="color: #000000">;</span>
+					<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">QueryEngine</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;@comunica/query-sparql-solid&#039;</span><span style="color: #000000">).</span><span style="color: #001080">QueryEngine</span><span style="color: #000000">;</span>
 <span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">interactiveLogin</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;solid-node-interactive-auth&#039;</span><span style="color: #000000">);</span>
 
 <span style="color: #008000">// This will open your Web browser to log in</span>
 <span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">session</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">interactiveLogin</span><span style="color: #000000">({ </span><span style="color: #001080">oidcIssuer:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;https://solidcommunity.net/&#039;</span><span style="color: #000000"> });</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">myEngine</span><span style="color: #000000"> = </span><span style="color: #795E26">newEngine</span><span style="color: #000000">();</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">myEngine</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">QueryEngine</span><span style="color: #000000">();</span>
 
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">result</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">myEngine</span><span style="color: #000000">.</span><span style="color: #795E26">query</span><span style="color: #000000">(</span><span style="color: #A31515">`</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">bindingsStream</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">myEngine</span><span style="color: #000000">.</span><span style="color: #795E26">queryBindings</span><span style="color: #000000">(</span><span style="color: #A31515">`</span>
 <span style="color: #A31515">  SELECT * WHERE {</span>
 <span style="color: #A31515">      ?s ?p ?o</span>
 <span style="color: #A31515">  } LIMIT 100`</span><span style="color: #000000">, {</span>
@@ -141,19 +141,28 @@
 <span style="color: #000000">});</span>
 
 <span style="color: #008000">// Consume results as a stream (best performance)</span>
-<span style="color: #001080">result</span><span style="color: #000000">.</span><span style="color: #001080">bindingsStream</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;data&#039;</span><span style="color: #000000">, (</span><span style="color: #001080">binding</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">binding</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;?s&#039;</span><span style="color: #000000">).</span><span style="color: #001080">value</span><span style="color: #000000">);</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">binding</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;?s&#039;</span><span style="color: #000000">).</span><span style="color: #001080">termType</span><span style="color: #000000">);</span>
+<span style="color: #001080">bindingsStream</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;data&#039;</span><span style="color: #000000">, (</span><span style="color: #001080">binding</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">binding</span><span style="color: #000000">.</span><span style="color: #795E26">toString</span><span style="color: #000000">()); </span><span style="color: #008000">// Quick way to print bindings for testing</span>
 
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">binding</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;?p&#039;</span><span style="color: #000000">).</span><span style="color: #001080">value</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">binding</span><span style="color: #000000">.</span><span style="color: #795E26">has</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;s&#039;</span><span style="color: #000000">)); </span><span style="color: #008000">// Will be true</span>
 
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">binding</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;?o&#039;</span><span style="color: #000000">).</span><span style="color: #001080">value</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #008000">// Obtaining values</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">binding</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;s&#039;</span><span style="color: #000000">).</span><span style="color: #001080">value</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">binding</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;s&#039;</span><span style="color: #000000">).</span><span style="color: #001080">termType</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">binding</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;p&#039;</span><span style="color: #000000">).</span><span style="color: #001080">value</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">binding</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;o&#039;</span><span style="color: #000000">).</span><span style="color: #001080">value</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+<span style="color: #001080">bindingsStream</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;end&#039;</span><span style="color: #000000">, () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #008000">// The data-listener will not be called anymore once we get here.</span>
+<span style="color: #000000">});</span>
+<span style="color: #001080">bindingsStream</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;error&#039;</span><span style="color: #000000">, (</span><span style="color: #001080">error</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">error</span><span style="color: #000000">(</span><span style="color: #001080">error</span><span style="color: #000000">);</span>
 <span style="color: #000000">});</span>
 
 <span style="color: #008000">// Consume results as an array (easier)</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">bindings</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">result</span><span style="color: #000000">.</span><span style="color: #795E26">bindings</span><span style="color: #000000">();</span>
-<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">bindings</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">].</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;?s&#039;</span><span style="color: #000000">).</span><span style="color: #001080">value</span><span style="color: #000000">);</span>
-<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">bindings</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">].</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;?s&#039;</span><span style="color: #000000">).</span><span style="color: #001080">termType</span><span style="color: #000000">);</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">bindings</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">bindingsStream</span><span style="color: #000000">.</span><span style="color: #795E26">toArray</span><span style="color: #000000">();</span>
+<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">bindings</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">].</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;s&#039;</span><span style="color: #000000">).</span><span style="color: #001080">value</span><span style="color: #000000">);</span>
+<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">bindings</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">].</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;s&#039;</span><span style="color: #000000">).</span><span style="color: #001080">termType</span><span style="color: #000000">);</span>
 </code></pre>
 					<p><em><a href="https://comunica.dev/docs/query/getting_started/query_app/"><strong>Read more</strong> about querying an application</a>.</em></p>
 					<a href="#usage-as-a-sparql-endpoint" id="usage-as-a-sparql-endpoint" style="color: inherit; text-decoration: none;">
@@ -180,7 +189,9 @@
 						<section class="tsd-index-section ">
 							<h3>Classes</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/actor_init_sparql_solid.CliArgsHandlerSolidAuth.html" class="tsd-kind-icon">Cli<wbr>Args<wbr>Handler<wbr>Solid<wbr>Auth</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/query_sparql_solid.CliArgsHandlerSolidAuth.html" class="tsd-kind-icon">Cli<wbr>Args<wbr>Handler<wbr>Solid<wbr>Auth</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/query_sparql_solid.QueryEngine.html" class="tsd-kind-icon">Query<wbr>Engine</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/query_sparql_solid.QueryEngineFactory.html" class="tsd-kind-icon">Query<wbr>Engine<wbr>Factory</a></li>
 							</ul>
 						</section>
 					</div>
@@ -197,7 +208,7 @@
 						<a href="actor_http_inrupt_solid_client_authn.html">actor-<wbr>http-<wbr>inrupt-<wbr>solid-<wbr>client-<wbr>authn</a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="actor_init_sparql_solid.html">actor-<wbr>init-<wbr>sparql-<wbr>solid</a>
+						<a href="query_sparql_solid.html">query-<wbr>sparql-<wbr>solid</a>
 					</li>
 				</ul>
 			</nav>
@@ -209,10 +220,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-module">
-						<a href="actor_init_sparql_solid.html" class="tsd-kind-icon">actor-<wbr>init-<wbr>sparql-<wbr>solid</a>
+						<a href="query_sparql_solid.html" class="tsd-kind-icon">query-<wbr>sparql-<wbr>solid</a>
 						<ul>
 							<li class=" tsd-kind-class tsd-parent-kind-module">
-								<a href="../classes/actor_init_sparql_solid.CliArgsHandlerSolidAuth.html" class="tsd-kind-icon">Cli<wbr>Args<wbr>Handler<wbr>Solid<wbr>Auth</a>
+								<a href="../classes/query_sparql_solid.CliArgsHandlerSolidAuth.html" class="tsd-kind-icon">Cli<wbr>Args<wbr>Handler<wbr>Solid<wbr>Auth</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="../classes/query_sparql_solid.QueryEngine.html" class="tsd-kind-icon">Query<wbr>Engine</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="../classes/query_sparql_solid.QueryEngineFactory.html" class="tsd-kind-icon">Query<wbr>Engine<wbr>Factory</a>
 							</li>
 						</ul>
 					</li>
