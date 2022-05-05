@@ -108,6 +108,8 @@ console.log(bindings[0].get('s').value);
 console.log(bindings[0].get('s').termType);
 ```
 
+**Note that `solid-node-interactive-auth` only works within Node.js apps. Please refer to [`@inrupt/solid-client-authn-browser`](https://www.npmjs.com/package/@inrupt/solid-client-authn-browser) if yoyou want to login via a browser app.**
+
 _[**Read more** about querying an application](https://comunica.dev/docs/query/getting_started/query_app/)._
 
 ### Usage as a SPARQL endpoint
