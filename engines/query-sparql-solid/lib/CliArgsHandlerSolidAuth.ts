@@ -15,7 +15,7 @@ export class CliArgsHandlerSolidAuth implements ICliArgsHandler {
         identityProvider: {
           alias: 'idp',
           type: 'string',
-          describe: 'Solid identity provider to authenticate with',
+          describe: 'Solid identity provider to authenticate with (set to \'void\' to disable auth)',
           default: 'https://solidcommunity.net/',
           group: 'Recommended options:',
         },
@@ -23,9 +23,11 @@ export class CliArgsHandlerSolidAuth implements ICliArgsHandler {
   }
 
   public async handleArgs(args: Record<string, any>, context: Record<string, any>): Promise<void> {
-    this.session = await interactiveLogin({
-      oidcIssuer: args.identityProvider,
-    });
-    context['@comunica/actor-http-inrupt-solid-client-authn:session'] = this.session;
+    if (args.identityProvider !== 'void') {
+      this.session = await interactiveLogin({
+        oidcIssuer: args.identityProvider,
+      });
+      context['@comunica/actor-http-inrupt-solid-client-authn:session'] = this.session;
+    }
   }
 }
