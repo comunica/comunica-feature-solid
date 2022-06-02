@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v2.1.0"></a>
+## [v2.1.0](https://github.com/comunica/comunica-feature-solid/compare/v2.0.1...v2.1.0) - 2022-06-02
+
+### Added
+* [Allow auth to be disabled on CLI with --idp void, Closes #28](https://github.com/comunica/comunica-feature-solid/commit/877290efb787a35555647d0d32ab169f7c0a1521)
+
 <a name="v2.0.1"></a>
 ## [v2.0.1](https://github.com/comunica/comunica-feature-solid/compare/v1.0.2...v2.0.1) - 2022-03-03
 
