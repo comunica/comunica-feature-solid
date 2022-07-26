@@ -165,7 +165,7 @@
     "@comunica/mediator-race": "^2.0.1",
     "@comunica/runner": "^2.0.3",
     "@comunica/runner-cli": "^2.0.3",
-    "@rubensworks/solid-client-authn-isomorphic": "^1.0.0",
+    "@rubensworks/solid-client-authn-isomorphic": "^2.0.0",
     "solid-node-interactive-auth": "^1.0.1"
   },
   "scripts": {
