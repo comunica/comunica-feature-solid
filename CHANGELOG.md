@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v2.3.0"></a>
+## [v2.3.0](https://github.com/comunica/comunica-feature-solid/compare/v2.2.0...v2.3.0) - 2022-08-26
+
+### Changed
+* [Update to Comunica 2.4](https://github.com/comunica/comunica-feature-solid/commit/39ac3d4191330fdd32b7590e1098a8ee95031725)
+
 <a name="v2.2.0"></a>
 ## [v2.2.0](https://github.com/comunica/comunica-feature-solid/compare/v2.1.0...v2.2.0) - 2022-07-26
 

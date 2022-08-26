@@ -1,6 +1,6 @@
 {
   "name": "@comunica/query-sparql-solid",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "A Comunica engine for query evaluation over Solid data pods",
   "lsd:module": true,
   "main": "lib/index.js",
@@ -48,7 +48,7 @@
     "@comunica/actor-dereference-rdf-parse": "^2.4.2",
     "@comunica/actor-hash-bindings-sha1": "^2.4.0",
     "@comunica/actor-http-fetch": "^2.4.0",
-    "@comunica/actor-http-inrupt-solid-client-authn": "^2.2.0",
+    "@comunica/actor-http-inrupt-solid-client-authn": "^2.3.0",
     "@comunica/actor-http-proxy": "^2.4.0",
     "@comunica/actor-init-query": "^2.4.1",
     "@comunica/actor-optimize-query-operation-bgp-to-join": "^2.4.0",
