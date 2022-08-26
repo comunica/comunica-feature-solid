@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v2.2.0"></a>
+## [v2.2.0](https://github.com/comunica/comunica-feature-solid/compare/v2.1.0...v2.2.0) - 2022-07-26
+
+### Changed
+* [Bump solid-authn-isomorphic to v2](https://github.com/comunica/comunica-feature-solid/commit/d65eea0308811ccaad87aaedf2ca9b9eb700d866)
+
 <a name="v2.1.0"></a>
 ## [v2.1.0](https://github.com/comunica/comunica-feature-solid/compare/v2.0.1...v2.1.0) - 2022-06-02
 
