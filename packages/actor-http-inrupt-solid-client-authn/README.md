@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/%40comunica%2Factor-http-inrupt-solid-client-authn.svg)](https://www.npmjs.com/package/@comunica/actor-http-inrupt-solid-client-authn)
 
 An [HTTP](https://github.com/comunica/comunica/tree/master/packages/bus-http) actor that
-does authenticated Solid requests using [Inrupp's solid-client-authn-js libraries](https://github.com/inrupt/solid-client-authn-js).
+does authenticated Solid requests using [Inrupt's solid-client-authn-js libraries](https://github.com/inrupt/solid-client-authn-js).
 
 To make this actor apply, the context must contain an authenticated `Session` object at the `'@comunica/actor-http-inrupt-solid-client-authn:session'` entry, for example:
 ```typescript
