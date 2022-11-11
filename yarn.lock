@@ -2777,15 +2777,20 @@
     asynciterator "^3.7.0"
     stream-to-string "^1.2.0"
 
-"@comunica/config-query-sparql@2.2.0", "@comunica/config-query-sparql@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@comunica/config-query-sparql/-/config-query-sparql-2.2.0.tgz#3a71029ee3e585d4b75017cd80eaba65ea9fc712"
-  integrity sha512-kfW1MkWlQszhOuyeyIvewLve0MOh6zqH5BPbdR84Y84rN56eXyx2pRHm/fswGqsuGEW+G1u6nclxNyx+4wEZYA==
+"@comunica/config-query-sparql@2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@comunica/config-query-sparql/-/config-query-sparql-2.5.0.tgz#b8992a366c025d75b14131c6bf35edde5ef8003c"
+  integrity sha512-BnHTUaZKNmt8q3ncxacQn730r04pFYa+mmtQ8g7WOZnwe+FtRJ9ME7YtO0fzXAjXDi3DVkCX9Nl89k1GUJYwOw==
 
 "@comunica/config-query-sparql@^2.0.1":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@comunica/config-query-sparql/-/config-query-sparql-2.0.1.tgz#8a777e755e5053e75c4cccb37f0ef69a3f489281"
   integrity sha512-DicTrd/z5Oh9LtAs74aaCeGdCy02Cl+XXyqqPfZ3KiykBOk02CK1ESjaSd3sPzQpIUEW7WRkNqrmEyKKfuQR/w==
+
+"@comunica/config-query-sparql@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@comunica/config-query-sparql/-/config-query-sparql-2.2.0.tgz#3a71029ee3e585d4b75017cd80eaba65ea9fc712"
+  integrity sha512-kfW1MkWlQszhOuyeyIvewLve0MOh6zqH5BPbdR84Y84rN56eXyx2pRHm/fswGqsuGEW+G1u6nclxNyx+4wEZYA==
 
 "@comunica/context-entries@^2.0.1":
   version "2.0.1"
