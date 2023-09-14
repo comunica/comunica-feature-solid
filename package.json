@@ -13,7 +13,7 @@
     "@rubensworks/eslint-config": "^2.0.0",
     "@strictsoftware/typedoc-plugin-monorepo": "^0.4.2",
     "@types/jest": "^29.0.0",
-    "@types/node": "^16.0.0",
+    "@types/node": "^18.0.0",
     "arrayify-stream": "^1.0.0",
     "asynciterator": "^3.2.1",
     "babel-loader": "^9.0.0",
