@@ -53,7 +53,7 @@
     "build": "npm run build:ts",
     "build:ts": "node \"../../node_modules/typescript/bin/tsc\"",
     "prepare": "comunica-compile-config config/config-default.json > engine-default.js",
-    "browser": "npm run prepare && \\\"../../node_modules/webpack/bin/webpack.js\\\" --config webpack.config.js --mode production"
+    "browser": "npm run prepare && \"../../node_modules/webpack/bin/webpack.js\" --config webpack.config.js --mode production"
   },
   "browser": {
     "./lib/index.js": "./lib/index-browser.js"
