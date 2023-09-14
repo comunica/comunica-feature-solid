@@ -7,7 +7,8 @@
   "ignoreComponents": [
     "Response",
     "RequestInfo",
-    "RequestInit"
+    "RequestInit",
+    "Session"
   ],
   "modulePrefix": {}
 }
