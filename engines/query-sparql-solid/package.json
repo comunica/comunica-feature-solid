@@ -165,6 +165,7 @@
     "@comunica/bus-http-invalidate": "^2.8.2",
     "@comunica/bus-query-operation": "^2.9.0",
     "@comunica/core": "^2.8.2",
+    "@comunica/context-entries": "^2.8.2",
     "@comunica/logger-void": "^2.8.2",
     "@comunica/mediator-all": "^2.8.2",
     "@comunica/mediator-combine-pipeline": "^2.8.2",
@@ -181,7 +182,7 @@
     "build": "npm run build:ts",
     "build:ts": "node \"../../node_modules/typescript/bin/tsc\"",
     "prepare": "comunica-compile-config config/config-default.json > engine-default.js",
-    "browser": "npm run prepare && \\\"../../node_modules/webpack/bin/webpack.js\\\" --config webpack.config.js --mode production"
+    "browser": "npm run prepare && \"../../node_modules/webpack/bin/webpack.js\" --config webpack.config.js --mode production"
   },
   "browser": {
     "./lib/index.js": "./lib/index-browser.js"
