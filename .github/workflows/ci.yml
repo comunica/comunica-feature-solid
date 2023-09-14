@@ -10,6 +10,8 @@ jobs:
         node-version:
           - 14.x
           - 16.x
+          - 18.x
+          - 20.x
     steps:
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
@@ -26,7 +28,7 @@ jobs:
             **/node_modules
           key: ${{ runner.os }}-test-modules-v1-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --frozen-lockfile --ignore-engines
       - name: Build project
         run: yarn run build
       - name: Run tests
@@ -63,7 +65,7 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-lint-modules-v1-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --frozen-lockfile --ignore-engines
       - name: Run linter
         run: yarn run lint
 
@@ -85,7 +87,7 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-docker-modules-v1-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --frozen-lockfile --ignore-engines
       - name: Install Lerna Docker
         run: sh -c "`curl -fsSl https://raw.githubusercontent.com/rubensworks/lerna-docker/master/install.sh`"
       - name: Build Docker images
@@ -115,7 +117,7 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-docs-modules-v1-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --frozen-lockfile --ignore-engines
       - name: Build docs
         run: yarn run doc
       - name: Deploy TSDoc to GitHub Pages
