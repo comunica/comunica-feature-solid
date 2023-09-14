@@ -46,6 +46,7 @@
   "dependencies": {
     "@comunica/actor-http-inrupt-solid-client-authn": "^2.4.0",
     "@comunica/actor-init-query": "^2.9.0",
+    "@comunica/config-query-sparql-solid": "^2.4.0",
     "@comunica/context-entries": "^2.8.2",
     "@comunica/core": "^2.8.2",
     "@comunica/query-sparql": "^2.9.0",
