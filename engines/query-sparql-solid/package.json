@@ -165,6 +165,7 @@
     "@comunica/bus-http-invalidate": "^2.8.2",
     "@comunica/bus-query-operation": "^2.9.0",
     "@comunica/core": "^2.8.2",
+    "@comunica/config-query-sparql-solid": "^2.4.0",
     "@comunica/context-entries": "^2.8.2",
     "@comunica/logger-void": "^2.8.2",
     "@comunica/mediator-all": "^2.8.2",
