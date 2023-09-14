@@ -3,6 +3,7 @@ import { KeysInitQuery } from '@comunica/context-entries';
 import { ActionContext } from '@comunica/core';
 import { runArgsInProcessStatic } from '@comunica/runner-cli';
 import { CliArgsHandlerSolidAuth } from '../lib/CliArgsHandlerSolidAuth';
+
 const cliArgsHandlerSolidAuth = new CliArgsHandlerSolidAuth();
 runArgsInProcessStatic(require('../engine-default.js'), {
   context: new ActionContext({

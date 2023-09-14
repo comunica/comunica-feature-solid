@@ -1,6 +1,7 @@
 import type { ICliArgsHandler } from '@comunica/types';
 import type { Session } from '@rubensworks/solid-client-authn-isomorphic';
 import type { Argv } from 'yargs';
+
 const { interactiveLogin } = require('solid-node-interactive-auth');
 
 /**
