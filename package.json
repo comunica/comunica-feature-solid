@@ -23,7 +23,7 @@
     "immutable": "^4.0.0",
     "jest": "^29.0.0",
     "jest-rdf": "^1.7.0",
-    "lerna": "^6.0.0",
+    "lerna": "^7.0.0",
     "manual-git-changelog": "^1.0.0",
     "nodemon": "^3.0.0",
     "pre-commit": "^1.2.2",
