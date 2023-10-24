@@ -10,7 +10,7 @@
     "@babel/preset-env": "^7.16.4",
     "@rubensworks/eslint-config": "^2.0.0",
     "@types/jest": "^29.0.0",
-    "@types/node": "^18.0.0",
+    "@types/node": "^20.0.0",
     "asynciterator": "^3.2.1",
     "babel-loader": "^9.0.0",
     "componentsjs-generator": "^3.0.1",
