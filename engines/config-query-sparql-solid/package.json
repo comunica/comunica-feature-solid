@@ -1,6 +1,6 @@
 {
   "name": "@comunica/config-query-sparql-solid",
-  "version": "2.4.0",
+  "version": "3.0.0",
   "description": "default configuration files for Comunica SPARQL Solid",
   "lsd:module": true,
   "main": "lib/index.js",
