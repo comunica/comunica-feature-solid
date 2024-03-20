@@ -3,17 +3,16 @@
   "version": "3.0.0",
   "description": "default configuration files for Comunica SPARQL Solid",
   "lsd:module": true,
-  "main": "lib/index.js",
-  "typings": "lib/index",
+  "license": "MIT",
+  "homepage": "https://comunica.dev/",
   "repository": {
     "type": "git",
     "url": "https://github.com/comunica/comunica-feature-solid.git",
     "directory": "engines/config-query-sparql-solid"
   },
-  "publishConfig": {
-    "access": "public"
+  "bugs": {
+    "url": "https://github.com/comunica/comunica-feature-solid/issues"
   },
-  "sideEffects": false,
   "keywords": [
     "comunica",
     "sparql",
@@ -23,11 +22,12 @@
     "config",
     "solid"
   ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/comunica/comunica-feature-solid/issues"
+  "sideEffects": false,
+  "main": "lib/index.js",
+  "typings": "lib/index",
+  "publishConfig": {
+    "access": "public"
   },
-  "homepage": "https://comunica.dev/",
   "files": [
     "components",
     "config",

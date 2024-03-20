@@ -5,7 +5,8 @@ import { runArgsInProcessStatic } from '@comunica/runner-cli';
 import { CliArgsHandlerSolidAuth } from '../lib/CliArgsHandlerSolidAuth';
 
 const cliArgsHandlerSolidAuth = new CliArgsHandlerSolidAuth();
-runArgsInProcessStatic(require('../engine-default.js'), {
+// eslint-disable-next-line ts/no-require-imports,ts/no-var-requires,import/extensions
+runArgsInProcessStatic(require('../engine-default.js')(), {
   context: new ActionContext({
     [KeysInitQuery.cliArgsHandlers.name]: [ cliArgsHandlerSolidAuth ],
   }),

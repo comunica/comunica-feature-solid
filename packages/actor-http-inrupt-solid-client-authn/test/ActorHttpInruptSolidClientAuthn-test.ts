@@ -12,7 +12,7 @@ describe('ActorHttpInruptSolidClientAuthn', () => {
   beforeEach(() => {
     bus = new Bus({ name: 'bus' });
     mediatorHttp = {
-      mediate: jest.fn(args => {
+      mediate: jest.fn((args) => {
         return { output: 'ABC', headers: new Headers({}) };
       }),
     };
@@ -41,31 +41,28 @@ describe('ActorHttpInruptSolidClientAuthn', () => {
 
     it('should not test with empty context', async() => {
       await expect(actor.test({ input: 'DUMMY', context: new ActionContext({}) })).rejects
-        .toThrowError(`Unable to find Solid authn session in context with key '@comunica/actor-http-inrupt-solid-client-authn:session'`);
+        .toThrow(`Unable to find Solid authn session in context with key '@comunica/actor-http-inrupt-solid-client-authn:session'`);
     });
 
     it('should not test with non-logged in session', async() => {
-      await expect(actor.test({ input: 'DUMMY',
-        context: new ActionContext({
-          '@comunica/actor-http-inrupt-solid-client-authn:session': sessionNotLoggedIn,
-        }) })).rejects
-        .toThrowError(`The provided Solid authn session is not in a logged in state, make sure to call session.login() first`);
+      await expect(actor.test({ input: 'DUMMY', context: new ActionContext({
+        '@comunica/actor-http-inrupt-solid-client-authn:session': sessionNotLoggedIn,
+      }) })).rejects
+        .toThrow(`The provided Solid authn session is not in a logged in state, make sure to call session.login() first`);
     });
 
     it('should not test with a fetch method', async() => {
-      await expect(actor.test({ input: 'DUMMY',
-        context: new ActionContext({
-          '@comunica/actor-http-inrupt-solid-client-authn:session': sessionNotLoggedIn,
-          [KeysHttp.fetch.name]: true,
-        }) })).rejects
-        .toThrowError(`Unable to run when a custom fetch function has been configured`);
+      await expect(actor.test({ input: 'DUMMY', context: new ActionContext({
+        '@comunica/actor-http-inrupt-solid-client-authn:session': sessionNotLoggedIn,
+        [KeysHttp.fetch.name]: true,
+      }) })).rejects
+        .toThrow(`Unable to run when a custom fetch function has been configured`);
     });
 
     it('should test with logged in session', async() => {
-      await expect(actor.test({ input: 'DUMMY',
-        context: new ActionContext({
-          '@comunica/actor-http-inrupt-solid-client-authn:session': sessionLoggedIn,
-        }) })).resolves.toBeTruthy();
+      await expect(actor.test({ input: 'DUMMY', context: new ActionContext({
+        '@comunica/actor-http-inrupt-solid-client-authn:session': sessionLoggedIn,
+      }) })).resolves.toBeTruthy();
     });
 
     it('should run', async() => {

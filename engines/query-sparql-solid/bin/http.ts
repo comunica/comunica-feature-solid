@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable node/no-path-concat */
 import { HttpServiceSparqlEndpoint } from '@comunica/actor-init-query';
 import { CliArgsHandlerSolidAuth } from '../lib/CliArgsHandlerSolidAuth';
 
@@ -11,7 +12,7 @@ HttpServiceSparqlEndpoint.runArgsInProcess(
   `${__dirname}/../`,
   process.env,
   defaultConfigPath,
-  code => {
+  (code) => {
     process.exit(code);
   },
   [ new CliArgsHandlerSolidAuth() ],

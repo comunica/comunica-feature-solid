@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable node/no-path-concat */
 import { KeysInitQuery } from '@comunica/context-entries';
 import { ActionContext } from '@comunica/core';
 import { runArgsInProcess } from '@comunica/runner-cli';

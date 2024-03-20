@@ -2,6 +2,7 @@ import type { ICliArgsHandler } from '@comunica/types';
 import type { Session } from '@rubensworks/solid-client-authn-isomorphic';
 import type { Argv } from 'yargs';
 
+// eslint-disable-next-line ts/no-require-imports,ts/no-var-requires
 const { interactiveLogin } = require('solid-node-interactive-auth');
 
 /**

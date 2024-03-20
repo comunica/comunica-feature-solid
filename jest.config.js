@@ -1,15 +1,15 @@
 module.exports = {
   transform: {
-    '^.+\\.ts$': 'ts-jest'
+    '^.+\\.ts$': 'ts-jest',
   },
   testRegex: '/test/.*-test.ts$',
   moduleFileExtensions: [
     'ts',
-    'js'
+    'js',
   ],
   globals: {
     'ts-jest': {
-      isolatedModules: true
+      isolatedModules: true,
     },
   },
   setupFilesAfterEnv: [ './setup-jest.js' ],
@@ -17,7 +17,7 @@ module.exports = {
   coveragePathIgnorePatterns: [
     '/node_modules/',
     '/mocks/',
-    'index.js'
+    'index.js',
   ],
   testEnvironment: 'node',
   coverageThreshold: {
@@ -25,7 +25,7 @@ module.exports = {
       branches: 100,
       functions: 100,
       lines: 100,
-      statements: 100
-    }
-  }
+      statements: 100,
+    },
+  },
 };
