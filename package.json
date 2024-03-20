@@ -31,7 +31,7 @@
     "streamify-string": "^1.0.1",
     "ts-jest": "^29.0.0",
     "typedoc": "^0.25.1",
-    "typescript": "^5.2.2",
+    "typescript": "^5.3.3",
     "webpack": "^5.64.4",
     "webpack-cli": "^5.0.0"
   },
