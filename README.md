@@ -17,11 +17,11 @@
 **[Learn more about Comunica on our website](https://comunica.dev/).**
 
 This is a monorepo that contains packages for allowing [Comunica](https://github.com/comunica/comunica) to query over [Solid](https://solidproject.org/) data pods.
-**If you want to _use_ a Solid-enabled Comunica engine, have a look at [Comunica SPARQL Solid](https://github.com/comunica/comunica-feature-solid/tree/master/packages/actor-init-sparql-solid).**
+**If you want to _use_ a Solid-enabled Comunica engine, have a look at [Comunica SPARQL Solid](https://github.com/comunica/comunica-feature-solid/tree/master/engines/query-sparql-solid).**
 
 Concretely, this monorepo adds Solid support to Comunica using the following packages:
 
-* [Comunica SPARQL Solid](https://github.com/comunica/comunica-feature-solid/tree/master/packages/actor-init-sparql-solid): A Comunica query engine that includes all Solid-related packages.
+* [Comunica SPARQL Solid](https://github.com/comunica/comunica-feature-solid/tree/master/engines/query-sparql-solid): A Comunica query engine that includes all Solid-related packages.
 * [Solid Auth Http Actor](https://github.com/comunica/comunica-feature-solid/tree/master/packages/actor-http-inrupt-solid-client-authn): HTTP actor that enables Solid authentication.
 
 [Click here to learn more about Comunica Solid, or to see live examples](https://comunica.dev/docs/query/advanced/solid/).
@@ -53,7 +53,7 @@ $ yarn install
 
 This will install the dependencies of all modules, and bootstrap the Lerna monorepo.
 After that, all [Comunica packages](https://github.com/comunica/comunica-feature-solid/tree/master/packages) are available in the `packages/` folder
-and can be used in a development environment, such as querying with [Comunica SPARQL Solid (`packages/actor-init-sparql-solid`)](https://github.com/comunica/comunica-feature-solid/tree/master/packages/actor-init-sparql-solid).
+and can be used in a development environment, such as querying with [Comunica SPARQL Solid (`engines/query-sparql-solid`)](https://github.com/comunica/comunica-feature-solid/tree/master/engines/query-sparql-solid).
 
 Furthermore, this will add [pre-commit hooks](https://www.npmjs.com/package/pre-commit)
 to build, lint and test.
