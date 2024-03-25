@@ -13,7 +13,6 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         node-version:
-          - 16.x
           - 18.x
           - 20.x
     steps:
@@ -60,7 +59,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
+          node-version: 18.x
       - name: Check out repository
         uses: actions/checkout@v3
       - name: Load cache
@@ -82,7 +81,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
+          node-version: 18.x
       - name: Check out repository
         uses: actions/checkout@v3
       - name: Load cache
@@ -109,7 +108,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
+          node-version: 18.x
       - name: Check out repository
         uses: actions/checkout@v3
       - name: Load cache
