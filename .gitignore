@@ -1,4 +1,5 @@
 node_modules
+.husky/_
 .rdf-test-suite-cache
 .idea
 lerna-debug.log
