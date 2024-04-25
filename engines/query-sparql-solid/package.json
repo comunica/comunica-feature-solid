@@ -44,10 +44,10 @@
     "lib/**/*.js.map"
   ],
   "scripts": {
-    "build": "npm run build:ts",
+    "build": "yarn run build:ts",
     "build:ts": "node \"../../node_modules/typescript/bin/tsc\"",
     "prepare": "comunica-compile-config config/config-default.json > engine-default.js",
-    "browser": "npm run prepare && \"../../node_modules/webpack/bin/webpack.js\" --config webpack.config.js --mode production"
+    "browser": "yarn run prepare && \"../../node_modules/webpack/bin/webpack.js\" --config webpack.config.js --mode production"
   },
   "dependencies": {
     "@comunica/actor-context-preprocess-convert-shortcuts": "^3.0.3",
