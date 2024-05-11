@@ -2036,7 +2036,7 @@
     rdf-data-factory "^1.1.1"
     sparqlalgebrajs "^4.3.3"
 
-"@comunica/actor-query-source-identify-hypermedia@^3.1.0":
+"@comunica/actor-query-source-identify-hypermedia@^3.1.1":
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/@comunica/actor-query-source-identify-hypermedia/-/actor-query-source-identify-hypermedia-3.1.1.tgz#4366cb06c621833bbabaed4a0b4e3244b9e2c7a0"
   integrity sha512-5q0XYzm861O8IDdtv7bxDYK2kuXCuUwUkepdAmwGp8CEd9HMO/woVD36D76LG6bZbrFApUvqSVQxW0Qgueon4w==
@@ -3048,11 +3048,6 @@
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/@comunica/config-query-sparql/-/config-query-sparql-2.7.0.tgz#1030ee76d5532bc6a09a6c8af26a06c7311a5861"
   integrity sha512-rMnFgT7cz9+0z7wV4OzIMY5qM9/Z0mTGrR8y2JokoHyyTcBGOSajFmy61XCSLMCsLLG8qDXsJ4ClCCky3TGfqA==
-
-"@comunica/config-query-sparql@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@comunica/config-query-sparql/-/config-query-sparql-3.0.1.tgz#0bffb23f6f8e52ae30caf1120463f332c7fa9359"
-  integrity sha512-m2nQg/6vMkmPrH0eLxInVjrRT5Qnv9j9XOjdTcZy/4ZT6vVPzxwNwcHOSwBfl96aDAwO77MI2aymHyK9ZbDyKQ==
 
 "@comunica/config-query-sparql@^3.1.0":
   version "3.1.0"
