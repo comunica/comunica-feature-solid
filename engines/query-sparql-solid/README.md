@@ -14,12 +14,10 @@ This module is part of the [Comunica framework](https://comunica.dev/).
 
 This library has the following known issues in certain cases, that are out of our control (but have been reported).
 
-* **Web Workers**: This library can not be used within due to an open issue in https://github.com/inrupt/solid-client-authn-js/issues/1657
+* **Web Workers**: This library can not be used within Web Workers due to an open issue in https://github.com/inrupt/solid-client-authn-js/issues/1657 Until this issue is fixed, https://github.com/rubensworks/solid-client-authn-js can be used instead.
 * **Enterprise Solid Server** (https://pod.inrupt.com/):
   * Patch requests are not accepted, so only new documents can be created, but existing ones can not be modified.
   * Due to missing `Accept-Patch`, and `Accept-Put` headers, [the destination type has to be forced](https://comunica.dev/docs/query/advanced/destination_types/). This will only work for creating new documents via the `putLdp` destination type. Updating existing documents via `patchSparqlUpdate` are currently not possible because of the previous issue.
-* **Node Solid Server** (https://solidcommunity.net/):
-  * Querying or updating existing documents fails with the error `Error translating between RDF formats` (https://github.com/solid/node-solid-server/issues/1618). Creating new documents does work.
 
 No issues are known with the [Community Solid Server](https://github.com/solid/community-server/)
 
