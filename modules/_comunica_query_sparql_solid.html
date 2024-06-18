@@ -23,14 +23,10 @@
 <a href="https://comunica.dev/docs/query/advanced/solid/">Click here to learn more about Comunica and Solid</a>.</p>
 <a id="md:known-issues" class="tsd-anchor"></a><h2><a href="#md:known-issues">Known issues</a></h2><p>This library has the following known issues in certain cases, that are out of our control (but have been reported).</p>
 <ul>
-<li><strong>Web Workers</strong>: This library can not be used within due to an open issue in <a href="https://github.com/inrupt/solid-client-authn-js/issues/1657">https://github.com/inrupt/solid-client-authn-js/issues/1657</a></li>
+<li><strong>Web Workers</strong>: This library can not be used within Web Workers due to an open issue in <a href="https://github.com/inrupt/solid-client-authn-js/issues/1657">https://github.com/inrupt/solid-client-authn-js/issues/1657</a> Until this issue is fixed, <a href="https://github.com/rubensworks/solid-client-authn-js">https://github.com/rubensworks/solid-client-authn-js</a> can be used instead.</li>
 <li><strong>Enterprise Solid Server</strong> (<a href="https://pod.inrupt.com/">https://pod.inrupt.com/</a>):<ul>
 <li>Patch requests are not accepted, so only new documents can be created, but existing ones can not be modified.</li>
 <li>Due to missing <code>Accept-Patch</code>, and <code>Accept-Put</code> headers, <a href="https://comunica.dev/docs/query/advanced/destination_types/">the destination type has to be forced</a>. This will only work for creating new documents via the <code>putLdp</code> destination type. Updating existing documents via <code>patchSparqlUpdate</code> are currently not possible because of the previous issue.</li>
-</ul>
-</li>
-<li><strong>Node Solid Server</strong> (<a href="https://solidcommunity.net/">https://solidcommunity.net/</a>):<ul>
-<li>Querying or updating existing documents fails with the error <code>Error translating between RDF formats</code> (<a href="https://github.com/solid/node-solid-server/issues/1618">https://github.com/solid/node-solid-server/issues/1618</a>). Creating new documents does work.</li>
 </ul>
 </li>
 </ul>
