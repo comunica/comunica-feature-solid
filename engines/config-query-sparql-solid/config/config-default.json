@@ -8,6 +8,8 @@
     "ccqs:config/context-preprocess/mediators.json",
     "ccqs:config/hash-bindings/actors.json",
     "ccqs:config/hash-bindings/mediators.json",
+    "ccqs:config/hash-quads/actors.json",
+    "ccqs:config/hash-quads/mediators.json",
     "ccqss:config/http/actors.json",
     "ccqs:config/http/mediators.json",
     "ccqs:config/http-invalidate/actors.json",
