@@ -1309,10 +1309,10 @@
     rdf-data-factory "^1.1.2"
     sparqlalgebrajs "^4.3.7"
 
-"@comunica/actor-optimize-query-operation-filter-pushdown@^3.2.2":
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-optimize-query-operation-filter-pushdown/-/actor-optimize-query-operation-filter-pushdown-3.2.2.tgz#ad59792adb64461908e8ff2741be81d5b9cec192"
-  integrity sha512-7zprOg1bDBsiEMHb66wGbMiN6copEQMPqj5ZZbhi9NTj9wmQKsHQQvE+FClM3xUwYOLePAKYUS8oyQtD9h/+pw==
+"@comunica/actor-optimize-query-operation-filter-pushdown@^3.2.3":
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-optimize-query-operation-filter-pushdown/-/actor-optimize-query-operation-filter-pushdown-3.2.3.tgz#da8d0d015101824d20043596568e3b889960256b"
+  integrity sha512-VaK6OxqTFIzVZyNNvax8nfEIvLUyzevaNKz1LNTbqMHK1wXh9qb3WDqgcx04JksWdhRa+mleqiYA823ty4PQdw==
   dependencies:
     "@comunica/bus-optimize-query-operation" "^3.2.1"
     "@comunica/bus-query-operation" "^3.2.2"
