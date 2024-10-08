@@ -4,6 +4,10 @@
   "description": "default configuration files for Comunica SPARQL Solid",
   "lsd:module": true,
   "license": "MIT",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/comunica-association"
+  },
   "homepage": "https://comunica.dev/",
   "repository": {
     "type": "git",
@@ -41,6 +45,6 @@
     "build:components": "componentsjs-generator"
   },
   "dependencies": {
-    "@comunica/config-query-sparql": "~3.2.1"
+    "@comunica/config-query-sparql": "~4.0.1-alpha.48.0"
   }
 }

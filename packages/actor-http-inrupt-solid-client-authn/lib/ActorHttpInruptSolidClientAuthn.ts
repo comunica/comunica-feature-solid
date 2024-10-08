@@ -2,7 +2,8 @@ import type { IActionHttp, IActorHttpOutput } from '@comunica/bus-http';
 import { ActorHttp } from '@comunica/bus-http';
 import { KeysHttp } from '@comunica/context-entries';
 import type { IActorArgs, IActorTest, Mediator } from '@comunica/core';
-import { ActionContextKey } from '@comunica/core';
+import { failTest, passTestVoid, ActionContextKey } from '@comunica/core';
+import type { TestResult } from '@comunica/core/lib/TestResult';
 import type { Session } from '@rubensworks/solid-client-authn-isomorphic';
 
 /**
@@ -18,18 +19,18 @@ export class ActorHttpInruptSolidClientAuthn extends ActorHttp {
     super(args);
   }
 
-  public async test(action: IActionHttp): Promise<IActorTest> {
+  public async test(action: IActionHttp): Promise<TestResult<IActorTest>> {
     if (!action.context || !action.context.has(ActorHttpInruptSolidClientAuthn.CONTEXT_KEY_SESSION)) {
-      throw new Error(`Unable to find Solid authn session in context with key '${ActorHttpInruptSolidClientAuthn.CONTEXT_KEY_SESSION.name}'`);
+      return failTest(`Unable to find Solid authn session in context with key '${ActorHttpInruptSolidClientAuthn.CONTEXT_KEY_SESSION.name}'`);
     }
     if (action.context.has(KeysHttp.fetch)) {
-      throw new Error(`Unable to run when a custom fetch function has been configured`);
+      return failTest(`Unable to run when a custom fetch function has been configured`);
     }
     const session: Session = action.context.get(ActorHttpInruptSolidClientAuthn.CONTEXT_KEY_SESSION)!;
     if (!session.info.isLoggedIn) {
-      throw new Error(`The provided Solid authn session is not in a logged in state, make sure to call session.login() first`);
+      return failTest(`The provided Solid authn session is not in a logged in state, make sure to call session.login() first`);
     }
-    return true;
+    return passTestVoid();
   }
 
   public async run(action: IActionHttp): Promise<IActorHttpOutput> {

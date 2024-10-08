@@ -2,6 +2,7 @@ import { KeysCore, KeysHttp } from '@comunica/context-entries';
 import { ActionContext, Bus } from '@comunica/core';
 import { LoggerVoid } from '@comunica/logger-void';
 import type { Session } from '@rubensworks/solid-client-authn-isomorphic';
+import '@comunica/utils-jest';
 import { ActorHttpInruptSolidClientAuthn } from '../lib/ActorHttpInruptSolidClientAuthn';
 import 'cross-fetch/polyfill';
 
@@ -40,29 +41,29 @@ describe('ActorHttpInruptSolidClientAuthn', () => {
     });
 
     it('should not test with empty context', async() => {
-      await expect(actor.test({ input: 'DUMMY', context: new ActionContext({}) })).rejects
-        .toThrow(`Unable to find Solid authn session in context with key '@comunica/actor-http-inrupt-solid-client-authn:session'`);
+      await expect(actor.test({ input: 'DUMMY', context: new ActionContext({}) })).resolves
+        .toFailTest(`Unable to find Solid authn session in context with key '@comunica/actor-http-inrupt-solid-client-authn:session'`);
     });
 
     it('should not test with non-logged in session', async() => {
       await expect(actor.test({ input: 'DUMMY', context: new ActionContext({
         '@comunica/actor-http-inrupt-solid-client-authn:session': sessionNotLoggedIn,
-      }) })).rejects
-        .toThrow(`The provided Solid authn session is not in a logged in state, make sure to call session.login() first`);
+      }) })).resolves
+        .toFailTest(`The provided Solid authn session is not in a logged in state, make sure to call session.login() first`);
     });
 
     it('should not test with a fetch method', async() => {
       await expect(actor.test({ input: 'DUMMY', context: new ActionContext({
         '@comunica/actor-http-inrupt-solid-client-authn:session': sessionNotLoggedIn,
         [KeysHttp.fetch.name]: true,
-      }) })).rejects
-        .toThrow(`Unable to run when a custom fetch function has been configured`);
+      }) })).resolves
+        .toFailTest(`Unable to run when a custom fetch function has been configured`);
     });
 
     it('should test with logged in session', async() => {
       await expect(actor.test({ input: 'DUMMY', context: new ActionContext({
         '@comunica/actor-http-inrupt-solid-client-authn:session': sessionLoggedIn,
-      }) })).resolves.toBeTruthy();
+      }) })).resolves.toPassTestVoid();
     });
 
     it('should run', async() => {
