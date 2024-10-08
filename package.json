@@ -27,8 +27,8 @@
     "publish": "yarn run build",
     "publish-release": "lerna publish",
     "publish-bare": "lerna exec -- npm publish --silent",
-    "publish-canary": "yarn run build && lerna version prerelease --preid alpha.$(packages/utils-monorepo/sh/get-next-alpha-version.sh @comunica/core) --exact --ignore-scripts --force-publish --no-push --no-git-tag-version --yes && git update-index --assume-unchanged $(git ls-files | tr '\\n' ' ') && lerna publish from-package --no-git-reset --pre-dist-tag next --force-publish --no-push --no-git-tag-version --yes && git update-index --no-assume-unchanged $(git ls-files | tr '\\n' ' ') && git checkout .",
-    "doc": "packages/utils-monorepo/sh/typedoc-json.sh create && typedoc && packages/utils-monorepo/sh/typedoc-json.sh remove",
+    "publish-canary": "yarn run build && lerna version prerelease --preid alpha.$(node_modules/@comunica/utils-monorepo/sh/get-next-alpha-version.sh @comunica/query-sparql-solid) --exact --ignore-scripts --force-publish --no-push --no-git-tag-version --yes && git update-index --assume-unchanged $(git ls-files | tr '\\n' ' ') && lerna publish from-package --no-git-reset --pre-dist-tag next --force-publish --no-push --no-git-tag-version --yes && git update-index --no-assume-unchanged $(git ls-files | tr '\\n' ' ') && git checkout .",
+    "doc": "node_modules/@comunica/utils-monorepo/sh/typedoc-json.sh create && typedoc && node_modules/@comunica/utils-monorepo/sh/typedoc-json.sh remove",
     "postinstall": "yarn run build && lerna run prepare",
     "version": "manual-git-changelog onversion"
   },
