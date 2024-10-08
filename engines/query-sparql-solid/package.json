@@ -1,6 +1,6 @@
 {
   "name": "@comunica/query-sparql-solid",
-  "version": "3.1.1",
+  "version": "4.0.0",
   "description": "A Comunica engine for query evaluation over Solid data pods",
   "lsd:module": true,
   "license": "MIT",
@@ -163,7 +163,7 @@
     "@comunica/actor-hash-bindings-murmur": "4.0.1-alpha.48.0",
     "@comunica/actor-hash-quads-murmur": "4.0.1-alpha.48.0",
     "@comunica/actor-http-fetch": "4.0.1-alpha.48.0",
-    "@comunica/actor-http-inrupt-solid-client-authn": "^3.1.1",
+    "@comunica/actor-http-inrupt-solid-client-authn": "^4.0.0",
     "@comunica/actor-http-proxy": "4.0.1-alpha.48.0",
     "@comunica/actor-http-wayback": "4.0.1-alpha.48.0",
     "@comunica/actor-init-query": "4.0.1-alpha.48.0",
