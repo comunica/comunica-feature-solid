@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v4.0.2"></a>
+## [v4.0.2](https://github.com/comunica/comunica-feature-solid/compare/v4.0.1...v4.0.2) - 2024-10-15
+
+### Fixed
+* [Fix retry actor not being configured](https://github.com/comunica/comunica-feature-solid/commit/a4e92bf71fb05b4b68cb3bb21c7a37ed02b97613)
+
 <a name="v4.0.1"></a>
 ## [v4.0.1](https://github.com/comunica/comunica-feature-solid/compare/v3.1.1...v4.0.1) - 2024-10-15
 
