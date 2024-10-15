@@ -2140,6 +2140,17 @@
     "@comunica/mediatortype-time" "^4.0.1"
     "@comunica/types" "^4.0.1"
 
+"@comunica/actor-http-retry@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-http-retry/-/actor-http-retry-4.0.1.tgz#f43a6e107325e73f397a5292ccd69160b8794bc2"
+  integrity sha512-IXh3yB8XoPAe+LgkBAd1uuaX3Er50Ng1WFjcwUGlc2hipXS+ngHcDC0fETq810h6GmGmDdwWUwNsi6jmQgUmNA==
+  dependencies:
+    "@comunica/bus-http" "^4.0.1"
+    "@comunica/bus-http-invalidate" "^4.0.1"
+    "@comunica/context-entries" "^4.0.1"
+    "@comunica/core" "^4.0.1"
+    "@comunica/mediatortype-time" "^4.0.1"
+
 "@comunica/actor-http-wayback@^4.0.1":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@comunica/actor-http-wayback/-/actor-http-wayback-4.0.1.tgz#3e460bf4758c0111dbc40d93c3bb2379a8d49eee"
