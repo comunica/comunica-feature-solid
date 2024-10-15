@@ -1,9 +1,13 @@
 {
   "name": "@comunica/actor-http-inrupt-solid-client-authn",
-  "version": "3.1.1",
+  "version": "4.0.0",
   "description": "A inrupt-solid-client-authn http actor",
   "lsd:module": true,
   "license": "MIT",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/comunica-association"
+  },
   "homepage": "https://comunica.dev/",
   "repository": {
     "type": "git",
@@ -37,9 +41,9 @@
     "build:components": "componentsjs-generator"
   },
   "dependencies": {
-    "@comunica/bus-http": "^3.3.0",
-    "@comunica/context-entries": "^3.3.0",
-    "@comunica/core": "^3.3.0",
+    "@comunica/bus-http": "4.0.1-alpha.48.0",
+    "@comunica/context-entries": "4.0.1-alpha.48.0",
+    "@comunica/core": "4.0.1-alpha.48.0",
     "@rubensworks/solid-client-authn-isomorphic": "^2.0.1"
   }
 }
