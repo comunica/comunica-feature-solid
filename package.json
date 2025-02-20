@@ -59,7 +59,7 @@
     "rdf-quad": "^2.0.0",
     "sparqlalgebrajs": "^5.0.0",
     "stream-to-string": "^1.1.0",
-    "streamify-array": "^1.0.0",
+    "streamify-array": "^2.0.0",
     "streamify-string": "^1.0.1",
     "ts-jest": "^29.0.0",
     "typedoc": "^0.27.0",
