@@ -54,7 +54,7 @@
     "lerna-script": "^1.4.0",
     "manual-git-changelog": "^1.0.0",
     "nodemon": "^3.0.0",
-    "npm-check-updates": "^17.0.0",
+    "npm-check-updates": "^18.0.0",
     "rdf-data-factory": "^2.0.0",
     "rdf-quad": "^2.0.0",
     "sparqlalgebrajs": "^5.0.0",
