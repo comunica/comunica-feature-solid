@@ -38,7 +38,7 @@
     "@comunica/utils-jest": "^4.2.0",
     "@comunica/utils-monorepo": "^4.0.1",
     "@rubensworks/eslint-config": "^3.0.0",
-    "@types/jest": "^29.0.0",
+    "@types/jest": "^30.0.0",
     "@types/node": "^22.0.0",
     "asynciterator": "^3.2.1",
     "babel-loader": "^10.0.0",
