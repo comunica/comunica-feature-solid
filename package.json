@@ -50,7 +50,7 @@
     "immutable": "^5.0.0",
     "jest": "^30.0.0",
     "jest-rdf": "^2.0.0",
-    "lerna": "^8.0.0",
+    "lerna": "^9.0.0",
     "lerna-script": "^1.4.0",
     "manual-git-changelog": "^1.0.0",
     "nodemon": "^3.0.0",
