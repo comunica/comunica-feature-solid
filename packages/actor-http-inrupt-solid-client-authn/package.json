@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "@comunica/bus-http": "^4.4.0",
-    "@comunica/context-entries": "^4.4.0",
+    "@comunica/context-entries": "^4.4.1",
     "@comunica/core": "^4.4.0",
     "@rubensworks/solid-client-authn-isomorphic": "^2.0.1"
   }
