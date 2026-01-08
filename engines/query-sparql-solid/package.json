@@ -315,7 +315,7 @@
     "@comunica/types": "^5.0.0",
     "@rubensworks/solid-client-authn-isomorphic": "^2.0.0",
     "solid-node-interactive-auth": "^1.0.2",
-    "yargs": "^17.7.2"
+    "yargs": "^18.0.0"
   },
   "browser": {
     "./lib/index.js": "./lib/index-browser.js"
