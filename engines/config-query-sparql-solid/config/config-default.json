@@ -1,6 +1,6 @@
 {
   "@context": [
-    "https://linkedsoftwaredependencies.org/bundles/npm/@comunica/config-query-sparql/^4.0.0/components/context.jsonld",
+    "https://linkedsoftwaredependencies.org/bundles/npm/@comunica/config-query-sparql/^5.0.0/components/context.jsonld",
     "https://linkedsoftwaredependencies.org/bundles/npm/@comunica/config-query-sparql-solid/^4.0.0/components/context.jsonld"
   ],
   "import": [
@@ -33,6 +33,10 @@
     "ccqs:config/query-process/mediators.json",
     "ccqs:config/query-result-serialize/actors.json",
     "ccqs:config/query-result-serialize/mediators.json",
+    "ccqs:config/query-serialize/actors.json",
+    "ccqs:config/query-serialize/mediators.json",
+    "ccqs:config/query-source-dereference-link/actors.json",
+    "ccqs:config/query-source-dereference-link/mediators.json",
     "ccqs:config/query-source-identify/actors.json",
     "ccqs:config/query-source-identify/mediators.json",
     "ccqs:config/query-source-identify-hypermedia/actors.json",
