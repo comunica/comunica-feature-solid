@@ -17,6 +17,7 @@ export class ActorHttpInruptSolidClientAuthn extends ActorHttp {
 
   public constructor(args: IActorHttpInruptSolidClientAuthnArgs) {
     super(args);
+    this.mediatorHttp = args.mediatorHttp;
   }
 
   public async test(action: IActionHttp): Promise<TestResult<IActorTest>> {
