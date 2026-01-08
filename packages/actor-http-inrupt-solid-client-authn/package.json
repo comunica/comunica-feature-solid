@@ -1,6 +1,6 @@
 {
   "name": "@comunica/actor-http-inrupt-solid-client-authn",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "A inrupt-solid-client-authn http actor",
   "lsd:module": true,
   "license": "MIT",

@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v5.0.1"></a>
+## [v5.0.1](https://github.com/comunica/comunica-feature-solid/compare/v5.0.0...v5.0.1) - 2026-01-08
+
+### Fixed
+* [Set TS target to es2023](https://github.com/comunica/comunica-feature-solid/commit/5c5a98ec8893a53b0a9fdee1657f4de8b4f6ddc5)
+
 <a name="v5.0.0"></a>
 ## [v5.0.0](https://github.com/comunica/comunica-feature-solid/compare/v4.0.2...v5.0.0) - 2026-01-08
 
