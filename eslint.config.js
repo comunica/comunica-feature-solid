@@ -80,6 +80,7 @@ module.exports = config([
       '**/comunica-browser.js',
       '.github/**',
       '**/bintest/**',
+      'lerna.json',
     ],
   },
   {
