@@ -2839,10 +2839,10 @@
     asynciterator "^3.10.0"
     rdf-string "^2.0.1"
 
-"@comunica/actor-query-operation-path-zero-or-one@^5.0.3":
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-path-zero-or-one/-/actor-query-operation-path-zero-or-one-5.0.3.tgz#208ea0698f269df5cd7cbbdd0e7859caccc6f86a"
-  integrity sha512-06kBtRc14JLRsik4A314OfcQ32qZcI54e2G783JXfiiKGqqko+htPYWW0nn7yAZ4MVG/OZpNkGsNEDNCC3TI5Q==
+"@comunica/actor-query-operation-path-zero-or-one@^5.0.5":
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-path-zero-or-one/-/actor-query-operation-path-zero-or-one-5.0.5.tgz#1981befd3e59cb912209ab424e020c335604bac4"
+  integrity sha512-qAubbe9Gjy1OgV2HVZahcC7kvJDBYPQ13hO5+P5DiGXEit9udG6WMIKknj9xayrWWzR1RL7Ohh56aq2MDISc9Q==
   dependencies:
     "@comunica/actor-abstract-path" "^5.0.3"
     "@comunica/bus-merge-bindings-context" "^5.0.3"
@@ -4744,10 +4744,14 @@
     "@rdfjs/types" "*"
     asynciterator "^3.10.0"
 
-"@comunica/utils-monorepo@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@comunica/utils-monorepo/-/utils-monorepo-5.0.0.tgz#83131023c5e49559555e6e8b765262800f75c2c5"
-  integrity sha512-TTwYQ5riOfmD7XUXb3KefNjXYsLWNNmW7TCNlmKsbvZe9P1ksDoRZ+6YkMEv1ai7VfJAj18+C61myt2yPiL7sA==
+"@comunica/utils-monorepo@^5.0.4":
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/@comunica/utils-monorepo/-/utils-monorepo-5.0.4.tgz#746cf93b401e796e65297aceaf1d00cdb302e459"
+  integrity sha512-1yYLHoaXRZvay+k5Yq9WLJc6O9JNoo10BQXQ42NBtVoLeBR5k8bb4Q+7nlQ3D6lpp9my7JSM0FBbgxBWnY6m/A==
+  dependencies:
+    "@manypkg/get-packages" "^3.1.0"
+    depcheck "^1.4.7"
+    process "^0.11.10"
 
 "@comunica/utils-query-operation@^5.0.3":
   version "5.0.3"
@@ -5759,6 +5763,30 @@
   integrity sha512-SiJP75nwB8GhgwLKQfdkSnDufAaCbkZWJqEDlKOUPUvVOplRGnfL+BPQZH5nvq2BYSRXsksXWZ4UHVnQZI/HYA==
   dependencies:
     npmlog "^4.1.2"
+
+"@manypkg/find-root@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@manypkg/find-root/-/find-root-3.1.0.tgz#dde5798a08fb2d0e05ee8ba3b745134532cc7b74"
+  integrity sha512-BcSqCyKhBVZ5YkSzOiheMCV41kqAFptW6xGqYSTjkVTl9XQpr+pqHhwgGCOHQtjDCv7Is6EFyA14Sm5GVbVABA==
+  dependencies:
+    "@manypkg/tools" "^2.1.0"
+
+"@manypkg/get-packages@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@manypkg/get-packages/-/get-packages-3.1.0.tgz#c97510b6386cab9c4a59e4a7fc2757753ef18865"
+  integrity sha512-0TbBVyvPrP7xGYBI/cP8UP+yl/z+HtbTttAD7FMAJgn/kXOTwh5/60TsqP9ZYY710forNfyV0N8P/IE/ujGZJg==
+  dependencies:
+    "@manypkg/find-root" "^3.1.0"
+    "@manypkg/tools" "^2.1.0"
+
+"@manypkg/tools@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@manypkg/tools/-/tools-2.1.0.tgz#e5a67b2ddb7cc34d304a0e5d23e8633008eebf20"
+  integrity sha512-0FOIepYR4ugPYaHwK7hDeHDkfPOBVvayt9QpvRbi2LT/h2b0GaE/gM9Gag7fsnyYyNaTZ2IGyOuVg07IYepvYQ==
+  dependencies:
+    jju "^1.4.0"
+    js-yaml "^4.1.0"
+    tinyglobby "^0.2.13"
 
 "@microsoft/tsdoc-config@0.16.2":
   version "0.16.2"
@@ -9039,7 +9067,7 @@ delegates@^1.0.0:
   resolved "https://registry.yarnpkg.com/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
   integrity sha512-bd2L678uiWATM6m5Z1VzNCErI3jiGzt6HGY8OVICs40JQq/HALfbyNJmp0UDakEY4pMMaN0Ly5om/B1VI/+xfQ==
 
-depcheck@^1.4.3:
+depcheck@^1.4.3, depcheck@^1.4.7:
   version "1.4.7"
   resolved "https://registry.yarnpkg.com/depcheck/-/depcheck-1.4.7.tgz#57976e2fa43625f477efc0f19ad868ef94f8a26c"
   integrity sha512-1lklS/bV5chOxwNKA/2XUUk/hPORp8zihZsXflr8x0kLwmcZ9Y9BsS6Hs3ssvA+2wUVbG0U2Ciqvm1SokNjPkA==
@@ -12405,7 +12433,7 @@ jest@^30.0.0:
     import-local "^3.2.0"
     jest-cli "30.0.0"
 
-jju@~1.4.0:
+jju@^1.4.0, jju@~1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/jju/-/jju-1.4.0.tgz#a3abe2718af241a2b2904f84a625970f389ae32a"
   integrity sha512-8wb9Yw966OSxApiCt0K3yNJL8pnNeIv+OEq2YMidz4FKP6nonSRoOXc80iXY4JaN2FC11B9qsNmDsm+ZOfMROA==
@@ -16340,7 +16368,7 @@ tinyglobby@0.2.12:
     fdir "^6.4.3"
     picomatch "^4.0.2"
 
-tinyglobby@^0.2.12:
+tinyglobby@^0.2.12, tinyglobby@^0.2.13:
   version "0.2.15"
   resolved "https://registry.yarnpkg.com/tinyglobby/-/tinyglobby-0.2.15.tgz#e228dd1e638cea993d2fdb4fcd2d4602a79951c2"
   integrity sha512-j2Zq4NyQYG5XMST4cbs02Ak8iJUdxRM0XI5QyxXuZOzKOINmWurp3smXu3y5wDcJrptwpSjgXHzIQxR0omXljQ==
