@@ -3283,10 +3283,10 @@
     "@comunica/utils-bindings-factory" "^5.1.0"
     rdf-store-stream "^3.0.0"
 
-"@comunica/actor-query-source-identify-hypermedia-qpf@^5.1.0":
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-source-identify-hypermedia-qpf/-/actor-query-source-identify-hypermedia-qpf-5.1.0.tgz#8a2af7e46150877d1f47e4c13198c0db52c3b029"
-  integrity sha512-DstHmApSCbeCDDGdysQQ6ZopMjw2lESR/JbA+lWrLTo+TCLtBCzVgKE47KoBACfFKfdBE2Lx/nmnoVDbpAa2gQ==
+"@comunica/actor-query-source-identify-hypermedia-qpf@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-source-identify-hypermedia-qpf/-/actor-query-source-identify-hypermedia-qpf-5.1.1.tgz#7d6d5e06ac600fe6b2865e1d736b85256afabb71"
+  integrity sha512-iGLvnGEW1WVQpFvRInFQ13bARb2n4ibniv7QQBjFxLLbRQYPhok4kP7k3l7lg63ud1tNMlXeaqEwPWMeE4b1eg==
   dependencies:
     "@comunica/actor-rdf-metadata-extract-hydra-controls" "^5.1.0"
     "@comunica/bus-dereference-rdf" "^5.1.0"
@@ -4745,10 +4745,10 @@
     "@rdfjs/types" "*"
     asynciterator "^3.10.0"
 
-"@comunica/utils-monorepo@^5.0.4":
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/@comunica/utils-monorepo/-/utils-monorepo-5.0.4.tgz#746cf93b401e796e65297aceaf1d00cdb302e459"
-  integrity sha512-1yYLHoaXRZvay+k5Yq9WLJc6O9JNoo10BQXQ42NBtVoLeBR5k8bb4Q+7nlQ3D6lpp9my7JSM0FBbgxBWnY6m/A==
+"@comunica/utils-monorepo@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@comunica/utils-monorepo/-/utils-monorepo-5.1.1.tgz#7f301afb1d57f8b34afd08c60a4ecd5b859b64f8"
+  integrity sha512-a4pJZK9qV8vyePlzLrF7G31pZG0HIAGbo1NuFrhBpkhwXrzN9GSTmGbNnWJMduxw7HM07C8/tRklQVB5tsLAzw==
   dependencies:
     "@manypkg/get-packages" "^3.1.0"
     depcheck "^1.4.7"
