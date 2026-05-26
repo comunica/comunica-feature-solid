@@ -41,9 +41,9 @@
     "build:components": "componentsjs-generator"
   },
   "dependencies": {
-    "@comunica/bus-http": "^5.2.2",
-    "@comunica/context-entries": "^5.2.2",
-    "@comunica/core": "^5.2.2",
+    "@comunica/bus-http": "^5.2.3",
+    "@comunica/context-entries": "^5.2.3",
+    "@comunica/core": "^5.2.3",
     "@rubensworks/solid-client-authn-isomorphic": "^2.0.1"
   }
 }
