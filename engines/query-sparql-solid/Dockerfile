@@ -1,4 +1,4 @@
-FROM node:22
+FROM node:24
 
 # Install location
 ENV dir /var/www/@comunica/query-sparql-solid/
