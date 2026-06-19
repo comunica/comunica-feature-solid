@@ -1464,10 +1464,10 @@
     "@comunica/bus-dereference" "^5.2.3"
     "@comunica/core" "^5.2.3"
 
-"@comunica/actor-dereference-http@^5.2.3":
-  version "5.2.3"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-dereference-http/-/actor-dereference-http-5.2.3.tgz#f538e2b31041fe7028bc6693ef067b15de487490"
-  integrity sha512-DdNmvrQR51fdslmWOOMo58Cnlkq1gR7ucyWRZx0Feel3AMdf+8mGZwCL5AgrI7ZKeVNnHxHSOoH/PBhCoeI5hw==
+"@comunica/actor-dereference-http@^5.2.4":
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-dereference-http/-/actor-dereference-http-5.2.4.tgz#907ce650a544015aa8023f97d17fcdb9ab2045c0"
+  integrity sha512-WsLarbK/VwaQ8FlQMneIxc9Z8S5y6ZN60kIVgVAZEWkuwNoZk9P4TMC+rovXhG9viWX9JmhyHX3MWyLIUYJv/Q==
   dependencies:
     "@comunica/bus-dereference" "^5.2.3"
     "@comunica/bus-http" "^5.2.3"
