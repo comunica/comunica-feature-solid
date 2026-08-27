@@ -10,6 +10,7 @@
     "test-changed": "lerna run test --since HEAD",
     "build-changed": "lerna run build --since HEAD",
     "test": "jest",
+    "test-integration": "jest --config jest.config.integration.js",
     "test-ci": "jest --ci --maxWorkers=4 --coverage",
     "lint": "eslint . --cache",
     "clean": "rm -rf ./node_modules && rm -rf ./packages/*/node_modules",

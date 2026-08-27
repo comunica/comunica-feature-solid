@@ -2,7 +2,8 @@
   "extends": "./tsconfig.json",
   "include": [
     "engines/**/*.ts",
-    "packages/**/*.ts"
+    "packages/**/*.ts",
+    "test-integration/**/*.ts"
   ],
   "exclude": [
     "**/node_modules"

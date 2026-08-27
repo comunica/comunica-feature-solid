@@ -42,12 +42,22 @@ module.exports = config([
     // Specific rules for NodeJS-specific files
     files: [
       '**/test/**/*.ts',
+      'test-integration/**/*.ts',
     ],
     rules: {
       'import/no-nodejs-modules': 'off',
       'unused-imports/no-unused-vars': 'off',
       'ts/no-require-imports': 'off',
       'ts/no-var-requires': 'off',
+    },
+  },
+  {
+    // Integration test files follow the same naming conventions as the unit test files
+    files: [
+      'test-integration/**/*.ts',
+    ],
+    rules: {
+      'unicorn/filename-case': 'off',
     },
   },
   {
@@ -66,6 +76,7 @@ module.exports = config([
     files: [
       '**/test/*-test.ts',
       '**/test/*-util.ts',
+      'test-integration/*-test.ts',
     ],
     rules: {
       'import/no-unassigned-import': 'off',

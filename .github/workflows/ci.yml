@@ -37,6 +37,8 @@ jobs:
         run: yarn run build
       - name: Run tests
         run: yarn run test-ci
+      - name: Run integration tests
+        run: yarn run test-integration
       - name: Submit coverage results
         uses: coverallsapp/github-action@master
         with:
