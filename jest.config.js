@@ -3,6 +3,11 @@ module.exports = {
     '^.+\\.ts$': 'ts-jest',
   },
   testRegex: '/test/.*-test.ts$',
+  // Integration tests are executed separately, via jest.config.integration.js
+  testPathIgnorePatterns: [
+    '/node_modules/',
+    '/test/integration/',
+  ],
   moduleFileExtensions: [
     'ts',
     'js',
