@@ -86,12 +86,8 @@ describe('SPARQL Update over an LDP server', () => {
     await expect(readQuads(resource)).resolves.toHaveLength(1);
   });
 
-  // Known bug: https://github.com/comunica/comunica-feature-solid/issues/43
-  // While handling the update, the engine dereferences the destination before it exists.
-  // The resulting 404 is stored in the source cache of the engine (QuerySourceHypermedia#sourcesState),
-  // which is never invalidated, so the newly created resource stays unreadable within this engine.
-  // Once this is fixed upstream, this test should become a regular test.
-  it.failing('reads a resource that this engine created', async() => {
+  // Regression test for https://github.com/comunica/comunica-feature-solid/issues/43
+  it('reads a resource that this engine created', async() => {
     await engine.queryVoid(`INSERT DATA { <${EX}s1> <${EX}p> <${EX}o1> }`, { sources: [ resource ]});
 
     await expect(readQuads(resource)).resolves.toHaveLength(1);
