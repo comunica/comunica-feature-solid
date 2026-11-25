@@ -45,6 +45,6 @@
     "build:components": "componentsjs-generator"
   },
   "dependencies": {
-    "@comunica/config-query-sparql": "~5.4.1"
+    "@comunica/config-query-sparql": "~5.5.0"
   }
 }
