@@ -36,8 +36,8 @@
   "devDependencies": {
     "@babel/core": "^8.0.0",
     "@babel/preset-env": "^8.0.0",
-    "@comunica/utils-jest": "^5.5.0",
-    "@comunica/utils-monorepo": "^5.5.0",
+    "@comunica/utils-jest": "^5.5.1",
+    "@comunica/utils-monorepo": "^5.5.1",
     "@rubensworks/eslint-config": "^3.0.0",
     "@types/jest": "^30.0.0",
     "@types/node": "^26.0.0",
